@@ -9,7 +9,7 @@ const app = express()  // creo una instancia de Express (createApplication())
 const socket = require("socket.io");
 const jwt = require('jsonwebtoken')
 // dentro de app, vive el resultado de ejecutar el createApplication de express, me da un servidor listo para levantar
-// FILTRO MIDDLEWARE, antes de usar mi aplicación, uso el filtro. Para que pueda responder de origen cruzado
+
 app.use(cors())
 app.use(express.json())
 
