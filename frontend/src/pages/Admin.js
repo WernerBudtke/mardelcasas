@@ -6,7 +6,7 @@ const Admin = (props) =>{
     const [socket, setSocket] = useState(null)
     const [messages, setMessages] = useState([])
     useEffect(()=>{
-        setSocket(io('http://localhost:4000', {
+        setSocket(io('https://mardelcasas.herokuapp.com', {
             auth:{
                 token: token
             }

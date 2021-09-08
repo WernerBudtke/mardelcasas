@@ -9,7 +9,7 @@ const UserChat = (props) =>{
         if(!token){
             return false
         }
-        setSocket(io('http://localhost:4000', {
+        setSocket(io('https://mardelcasas.herokuapp.com', {
             auth:{
                 token: token
             }
