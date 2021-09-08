@@ -4,7 +4,7 @@ const propertiesActions = {
   getPropertiesFiltered: (filter) => {
     console.log("filter que se aplica al endpoint en redux", filter)
       return async (dispatch) => {
-          let res = await axios.put("http://localhost:4000/api/properties", {filter: filter})
+          let res = await axios.put("https://mardelcasas.herokuapp.com/api/properties", {filter: filter})
           console.log("array de propiedades en action getProperties")
           console.log(res.data.response)
           dispatch({ type: "GET_PROPERTIES_FILTERED", payload:{ filterObj: filter, response: res.data.response }})
@@ -15,7 +15,7 @@ const propertiesActions = {
   getProperty: (id) => {
     return async () => {
       try {
-        let response = await axios.get(`http://localhost:4000/api/property/${id}`)
+        let response = await axios.get(`https://mardelcasas.herokuapp.com/api/property/${id}`)
         if (response.data.success) {
           return {success: true, response: response.data.response}
         } else {
@@ -30,7 +30,7 @@ const propertiesActions = {
     getNumberOfProperties: (id) => {
     return async () => {
       let res = await axios.get(
-        `http://localhost:4000/api/getnumberofprops/${id}`
+        `https://mardelcasas.herokuapp.com/api/getnumberofprops/${id}`
       );
       return res.data;
     };

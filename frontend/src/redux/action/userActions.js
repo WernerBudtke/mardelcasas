@@ -2,7 +2,7 @@ import axios from "axios";
 const userActions = {
   createUser: (user) => {
     return async () => {
-      let res = await axios.post("http://localhost:4000/api/user/register", {
+      let res = await axios.post("https://mardelcasas.herokuapp.com/api/user/register", {
         ...user,
       });
       return res.data;
@@ -10,7 +10,7 @@ const userActions = {
   },
   logIn: (user) => {
     return async (dispatch) => {
-      let res = await axios.post("http://localhost:4000/api/user/login", {
+      let res = await axios.post("https://mardelcasas.herokuapp.com/api/user/login", {
         ...user,
       });
       if (res.data.success) {
@@ -23,7 +23,7 @@ const userActions = {
   },
   validationUserToken: (token) => {
     return async () => {
-      let res = await axios.get("http://localhost:4000/api/user/validatemail", {
+      let res = await axios.get("https://mardelcasas.herokuapp.com/api/user/validatemail", {
         headers: {
           Authorization: "Bearer " + token,
         },
