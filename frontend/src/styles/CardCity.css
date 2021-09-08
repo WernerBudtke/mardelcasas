@@ -1,0 +1,112 @@
+@media only screen and (min-width: 375px) {
+  main {
+    padding-bottom: 2rem;
+  }
+  main .mainTitle {
+    text-align: center;
+    color: rgb(48, 66, 168);
+    padding: 2rem 0;
+    border-top: 20px solid blue;
+  }
+
+  .mainCityCarBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .divCard a {
+    text-decoration: none;
+  }
+
+  .divCard,
+  .divCard .cardCity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divCard .cardCity {
+    width: 20rem;
+    height: 18rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .divCard .cardCity:before {
+    content: "";
+    position: absolute;
+    background-color: #020202;
+    opacity: 0.5;
+    width: 20rem;
+    height: 18rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .divCard .cardCity > * {
+    color: rgb(202, 202, 202);
+    z-index: 1;
+  }
+
+  .divCard .cardCity:hover {
+    transform: scale(1.03);
+    overflow: hidden;
+    background-color: #0000002c;
+    opacity: 0.9;
+    transition: transform 0.5s;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+}
+@media only screen and (min-width: 576px) {
+
+}
+@media only screen and (min-width: 768px) {
+
+  .mainCityCarBox {
+    width: 88%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .divCard .cardCity {
+
+  }
+
+}
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .mainCityCarBox {
+    width: 88%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .divCard .cardCity {
+    width: 40rem;
+    height: 22rem;
+  }
+
+  .divCard .cardCity:before {
+    width: 40rem;
+    height: 22rem;
+  }
+
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}

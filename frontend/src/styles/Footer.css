@@ -1,0 +1,113 @@
+footer{
+    color: #EAD7DB;
+}
+img.contactImg, img.mailImg{
+    width: 1rem;
+    margin-right: 1rem;
+}
+
+img.contactImg{
+    height: 1.25rem;
+}
+
+img.rrssImg{
+    width: 1.5rem;
+}
+
+footer div.contact{
+    width: 100%;
+    background-color: #493737;
+    display: flex;
+    padding: 0.5rem 0;
+}
+
+footer div div div.contactInfo{
+    display: flex;
+    align-items: center;
+}
+
+footer div.copyright{
+    padding: 0.5rem;
+    background-color: #1a1d19;
+    text-align: center;
+}
+
+footer div div.addresses{
+    width: 70%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mob{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+footer div div.socialNetworks{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (min-width: 425px){
+}
+
+@media only screen and (min-width: 768px){
+    footer div div.addresses{
+        flex-direction: row;
+        padding-left: 0;
+    }
+
+    footer div.contact{
+        padding: 1rem 2rem;
+    }
+    div.infoOne{
+        width: 55%;
+    }
+    footer div div.socialNetworks{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    
+    footer div div.addresses{
+        width: 85%;
+    }
+
+    .mob{
+        flex-direction: row;
+    }
+
+    footer div div.socialNetworks{
+        width: 15%;
+        justify-content: space-between;
+    }
+
+    footer div.contact{
+        padding: 1rem 6rem;
+    }
+
+    div.contactInfo{
+        width: 33%;
+    }
+
+    br#footerBr{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+}
+
+@media only screen and (min-width: 2560px){
+}

@@ -1,0 +1,80 @@
+
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 4vw;
+  }
+  
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+    align-items: center;
+    z-index: 1;
+  }
+
+  header h1 {
+    text-shadow: 1px 1px 7px black;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .swiperBox {
+    width: 100%;
+    height: 100%;
+  } 
+
+  .swiper {
+      width: 100%;
+      height: 100%;
+      color: #000;
+  }
+
+  .swiperSlide {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    color: #000;
+    transform: scale(0.5);
+  }
+}
+
+@media only screen and (min-width: 425px) {
+
+}
+
+@media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 1vw;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}

@@ -1,0 +1,111 @@
+.propertyMain {
+    background: #EAD7DB;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.propertyMain .propertyErrorConnection,
+.propertyMain .propertyLoading {
+    color: #2B302A;
+    font-size: 1.5rem;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.propertyMain .carrouselAndTitleSection {
+    width: 90%;
+    margin-top: 10px;
+    height: 300px;
+    color: #2B302A;
+}
+
+.propertyMain .carrouselAndTitleSection h1{
+    color: #2B302A;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.propertyMain .dataSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 10px 0px;
+}
+
+.propertyMain .dataSection {
+    height: 200px;
+    background: #D2A19C;
+}
+
+.propertyMain .videoSection {
+    width: 90%;
+    margin: 10px 0px;
+}
+
+.propertyMain .videoSection .videoArticle {
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+}
+
+.propertyMain .videoSection .videoArticle iframe{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.propertyMain .calendarSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-top: 10px;
+    background: #986F6D;
+    height: 200px;
+    color: #2B302A;
+}
+
+/* @media only screen and (min-width: 375px) {
+
+}
+
+@media only screen and (min-width: 425px) {
+
+}
+
+@media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}
+
+#2B302A
+#EAD7DB
+#493737
+#986F6D
+#D2A19C
+
+*/

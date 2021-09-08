@@ -1,0 +1,225 @@
+
+@media only screen and (min-width: 375px) {
+    .bigFilter {
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.3rem;
+    }
+
+    .bigFilter>div:first-child {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+
+    /* BOTON VER MAS FILTROS */
+    .bigFilter div button {
+        align-self: flex-start;
+        width: 7rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.3rem;
+        background-color: green;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    /* FILTROS SELECCIONADOS */
+    .bigFilter div .filtersSelected {
+        align-self: flex-end;
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: hotpink;
+    }
+
+    .bigFilter div .filtersSelected p{
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0.3rem;
+        margin: 0.1rem 0.2rem;
+        border-radius: 0.3rem;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    .bigFilter div .filtersSelected p *{ 
+        vertical-align: middle;
+    }
+
+    /* algunos ajustes compartidos por varios */
+    
+    .bigFilter .filtersToSelect * select {
+        width: 100%;
+    }
+    
+    .bigFilter .filtersToSelect>div {
+        margin: 0.3rem;
+    }
+
+    /* estilos por cada linea que se meustra */
+    
+    .bigFilter .filtersToSelect div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(1) div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(1) div select {
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    /* .bigFilter .filtersToSelect div:nth-child(2) {
+    
+    } */
+    
+    .bigFilter .filtersToSelect div:nth-child(2) select {
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(3) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(3) div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(3) select {
+        width: 100%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(4) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(4) select {
+        width: 100%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(4) div {
+        width: 7.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(4)>div>input {
+        width: 100%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    /* .bigFilter .filtersToSelect div:nth-child(5) {
+        
+    } */
+    
+    .bigFilter .filtersToSelect div:nth-child(5) select {
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(6) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(6)> div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(6)> div > div{
+        width: 100%;
+        padding: 0.5rem 0 0.5rem 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .bigFilter .filtersToSelect div:nth-child(6)> div > div input {
+        margin-right: 1rem;
+        border: 1px solid gray;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(7) {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(7) button {
+        background-color: white;
+        width: 60%;
+        height: 3rem;
+        border: 1px solid gray;
+        font-size: 1.3rem;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .sortList {
+        display: flex;
+        justify-content: flex-end;
+    } 
+    
+    .bigFilter .sortList select {
+        width: 40%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    
+    }
+}
+
+@media only screen and (min-width: 425px) {
+
+}
+
+@media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}
