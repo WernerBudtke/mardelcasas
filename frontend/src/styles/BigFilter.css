@@ -1,224 +1,860 @@
-
 @media only screen and (min-width: 375px) {
-    .bigFilter {
-        background-color: white;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        border-radius: 0.3rem;
-    }
+  .bigFilter {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    padding-top: 2rem;
+  }
 
-    .bigFilter>div:first-child {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-    }
+  .bigFilter > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
 
-    /* BOTON VER MAS FILTROS */
-    .bigFilter div button {
-        align-self: flex-start;
-        width: 7rem;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 0.3rem;
-        background-color: green;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    /* FILTROS SELECCIONADOS */
-    .bigFilter div .filtersSelected {
-        align-self: flex-end;
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: hotpink;
-    }
+  /* BOTON VER MAS FILTROS */
+  .bigFilter div button {
+    align-self: flex-start;
+    width: 8rem;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-    .bigFilter div .filtersSelected p{
-        display: inline-block;
-        vertical-align: middle;
-        padding: 0.3rem;
-        margin: 0.1rem 0.2rem;
-        border-radius: 0.3rem;
-        border: 1px solid black;
-        cursor: pointer;
-    }
-    .bigFilter div .filtersSelected p *{ 
-        vertical-align: middle;
-    }
+  /* FILTROS SELECCIONADOS */
+  .bigFilter div .filtersSelected {
+    align-self: flex-end;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hotpink;
+  }
 
-    /* algunos ajustes compartidos por varios */
-    
-    .bigFilter .filtersToSelect * select {
-        width: 100%;
-    }
-    
-    .bigFilter .filtersToSelect>div {
-        margin: 0.3rem;
-    }
+  .bigFilter div .filtersSelected p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.3rem;
+    margin: 0.1rem 0.2rem;
+    border-radius: 0.3rem;
+    border: 1px solid black;
+    cursor: pointer;
+    animation: bounceIn;
+    animation-duration: 1s;
+  }
+  .bigFilter div .filtersSelected p * {
+    vertical-align: middle;
+  }
 
-    /* estilos por cada linea que se meustra */
-    
-    .bigFilter .filtersToSelect div:nth-child(1) {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(1) div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(1) div select {
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    }
-    
-    /* .bigFilter .filtersToSelect div:nth-child(2) {
-    
-    } */
-    
-    .bigFilter .filtersToSelect div:nth-child(2) select {
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(3) {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(3) div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(3) select {
-        width: 100%;
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(4) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(4) select {
-        width: 100%;
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(4) div {
-        width: 7.8rem;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(4)>div>input {
-        width: 100%;
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    }
-    
-    /* .bigFilter .filtersToSelect div:nth-child(5) {
-        
-    } */
-    
-    .bigFilter .filtersToSelect div:nth-child(5) select {
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(6) {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(6)> div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(6)> div > div{
-        width: 100%;
-        padding: 0.5rem 0 0.5rem 2rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
+  /* algunos ajustes compartidos por varios */
+  .bigFilter .filtersToSelect * select:focus,
+  input:focus {
+    outline: 1px solid transparent;
+  }
 
-    .bigFilter .filtersToSelect div:nth-child(6)> div > div input {
-        margin-right: 1rem;
-        border: 1px solid gray;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(7) {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .bigFilter .filtersToSelect div:nth-child(7) button {
-        background-color: white;
-        width: 60%;
-        height: 3rem;
-        border: 1px solid gray;
-        font-size: 1.3rem;
-        border-radius: 0.3rem;
-    }
-    
-    .bigFilter .sortList {
-        display: flex;
-        justify-content: flex-end;
-    } 
-    
-    .bigFilter .sortList select {
-        width: 40%;
-        padding: 0.3rem;
-        margin-top: 0.3rem;
-        border: 1px solid gray;
-        border-radius: 0.3rem;
-    
-    }
+  .bigFilter .bigFilterBox {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .bigFilter .filtersToSelect {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .bigFilter .filtersToSelect * select {
+    width: 100%;
+  }
+
+  .bigFilter .filtersToSelect > div {
+    margin: 0.3rem;
+  }
+
+  /* estilos por cada linea que se meustra */
+
+  .bigFilter .filtersToSelect > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) div select {
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .propiedadBigFilterDesktopResponsive {
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(2) {
+    visibility: visible;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(2) select {
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) select {
+    width: 100%;
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) h5 {
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) select {
+    width: 100%;
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) div {
+    width: 7.8rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) > div > input {
+    width: 100%;
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .metrosBigFilterDesktopResponsive {
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(5) {
+    visibility: visible;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(5) select {
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(6) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(6) > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(6) > div > div {
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(6) > div > div input {
+    margin-right: 1rem;
+    border: 1px solid gray;
+  }
+
+  .buscarBigFilterResponsiveDesktop {
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(7) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(7) button {
+    visibility: visible;
+    background-color: white;
+    width: 60%;
+    height: 3rem;
+    border: 1px solid gray;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .sortList {
+    height: 9vh;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bigFilter .sortList select {
+    width: 40%;
+    height: 7vh;
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    margin-right: 1.2rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .sortList select:focus {
+    outline: 1px solid transparent;
+  }
 }
 
 @media only screen and (min-width: 425px) {
-
 }
 
 @media only screen and (min-width: 576px) {
 }
 
 @media only screen and (min-width: 768px) {
+  .bigFilter {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .bigFilterBox {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* revisar  */
+  .bigFilter > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  /* BOTON VER MAS FILTROS */
+  .bigFilter div button {
+    align-self: flex-start;
+    width: 13rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    /* border: 1px solid black; */
+    color: white;
+    border: 1px solid #f97d16 !important;
+    background-color: #f97d16 !important;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* FILTROS SELECCIONADOS */
+  .bigFilter div .filtersSelected {
+    align-self: flex-end;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hotpink;
+  }
+
+  .bigFilter div .filtersSelected p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.3rem;
+    margin: 0.1rem 0.2rem;
+    border-radius: 0.3rem;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  .bigFilter div .filtersSelected p * {
+    vertical-align: middle;
+  }
+
+  /* algunos ajustes compartidos por varios */
+  .bigFilter .filtersToSelect {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .bigFilter .filtersToSelect * select {
+    width: 100%;
+  }
+
+  .bigFilter .filtersToSelect > div {
+    margin: 0.3rem;
+  }
+
+  /* estilos por cada linea que se meustra */
+
+  .bigFilter .filtersToSelect > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) h5 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) div select {
+    font-size: 1rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .propiedadBigFilterDesktopResponsive {
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(2) {
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) h5 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) select {
+    within: 100%;
+    font-size: 1rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) div {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) h5 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) select {
+    within: 50%;
+    font-size: 1rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(4) > div > input {
+    within: 50%;
+    font-size: 1rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .metrosBigFilterDesktopResponsive {
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
+    font-size: 0.8rem;
+    width: 100% !important;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(5) {
+    visibility: hidden;
+    max-height: 0;
+    max-width: 0;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div > div {
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div > div label {
+    font-size: 1.5rem;
+    padding: 0 0.2rem;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div > div input {
+    margin-right: 1rem;
+    border: 1px solid lightgray;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .buscarBigFilterResponsiveDesktop {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .buscarBigFilterResponsiveDesktop > button {
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
+    width: 95% !important;
+    height: 7vh;
+    margin: 0 auto;
+    border: 1px solid gray;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(7) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(7) button {
+    visibility: hidden;
+    max-width: 0;
+    max-height: 0;
+    background-color: white;
+    width: 60%;
+    height: 4rem;
+    border: 1px solid gray;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .sortList {
+    height: 9vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .bigFilter .sortList select {
+    width: 30%;
+    font-size: 1.2rem;
+    height: 6vh;
+    padding: 0 1rem;
+    margin-right: 1.6rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media only screen and (min-width: 991px) {
+  .bigFilter {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+    padding-top: 0;
+  }
+
+  .bigFilter .bigFilterBox {
+    width: 89%;
+    margin: 0 auto;
+  }
+  .bigFilter .image {
+    background-image: url("../assets/6.jpg");
+    background-size: cover;
+    background-position: 100% 35%;
+    height: 40vh;
+    /* width: 50%; */
+  }
+  /* revisar  */
+  .bigFilter .bigFilterBox {
+    display: flex;
+    justify-content: space-between;
+    width: 94%;
+    flex-direction: row-reverse;
+    padding: 0.8rem;
+  }
+  .bigFilter .sortList {
+    background-color: transparent;
+  }
+  /* BOTON VER MAS FILTROS */
+  .bigFilter div button {
+    align-self: flex-start;
+    width: 13rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* FILTROS SELECCIONADOS */
+  .bigFilter div .filtersSelected {
+    align-self: flex-end;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hotpink;
+  }
+
+  .bigFilter div .filtersSelected p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.3rem;
+    margin: 0.1rem 0.2rem;
+    border-radius: 0.3rem;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  .bigFilter div .filtersSelected p * {
+    vertical-align: middle;
+  }
+
+  /* algunos ajustes compartidos por varios */
+  .bigFilter .filtersToSelect {
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  .bigFilter .filtersToSelect * select {
+    width: 100%;
+  }
+
+  .bigFilter .filtersToSelect > div {
+    margin: 0.3rem;
+  }
+
+  /* estilos por cada linea que se meustra */
+
+  .bigFilter .filtersToSelect > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) h5 {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(1) div select {
+    font-size: 1.3rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 4px -1px rgb(0 0 0 / 10%);
+  }
+
+  .propiedadBigFilterDesktopResponsive {
+    visibility: visible;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(2) {
+    visibility: hidden;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) h5 {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(3) select {
+    within: 100%;
+    font-size: 1.3rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 4px -1px rgb(0 0 0 / 10%);
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) div {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) h5 {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  .bigFilter .filtersToSelect > div:nth-child(4) select {
+    within: 50%;
+    font-size: 1.3rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 4px -1px rgb(0 0 0 / 10%);
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(4) > div > input {
+    within: 50%;
+    font-size: 1.3rem;
+    height: 6vh;
+    padding: 0.5rem;
+    margin-top: 0.7rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 4px -1px rgb(0 0 0 / 10%);
+  }
+
+  .metrosBigFilterDesktopResponsive {
+    visibility: visible;
+    width: 100% !important;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(5) {
+    visibility: hidden;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.8rem;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div > div {
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div > div label {
+    font-size: 1.8rem;
+    padding: 0 0.2rem;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(6) > div > div input {
+    margin-right: 1rem;
+    border: 1px solid lightgray;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .buscarBigFilterResponsiveDesktop {
+    width: 100%;
+  }
+
+  .buscarBigFilterResponsiveDesktop > button {
+    visibility: visible;
+    width: 96% !important;
+    height: 8vh;
+    margin: 0 auto;
+    border: 1px solid gray;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(7) {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bigFilter .filtersToSelect div:nth-child(7) button {
+    visibility: hidden;
+    background-color: white;
+    width: 60%;
+    height: 3rem;
+    border: 1px solid gray;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+  }
+
+  .bigFilter .sortList {
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    box-shadow: 0px 22px 12px -17px rgb(0 0 0 / 12%);
+  }
+
+  .bigFilter .sortList select {
+    width: 19%;
+    font-size: 1.6rem;
+    height: 5vh;
+    padding: 0 1rem;
+    margin-right: 3.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
 }
 
 @media only screen and (min-width: 1440px) {
+  .containerHome .homeFilter .firstRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -6rem;
+  }
 }
 
 @media only screen and (min-width: 2560px) {

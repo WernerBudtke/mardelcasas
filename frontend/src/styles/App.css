@@ -1,58 +1,91 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Lobster&family=Urbanist&display=swap");
 html * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+  /* font-family: 'Cabin', sans-serif; */
 }
 
 @media only screen and (min-width: 375px) {
   html {
     font-size: 4vw;
   }
-  
+
   header {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 0.5rem;
     align-items: center;
     z-index: 1;
   }
 
-  header h1 {
-    text-shadow: 1px 1px 7px black;
-    color: white;
-    margin-bottom: 1.5rem;
+  header > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 5rem;
+  }
+
+  header > div > .goBackPH {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+  }
+
+  header > div a svg {
+    margin: 0 2.1rem;
+  }
+
+  header div a {
+    text-decoration: none;
+  }
+
+  header div a h1 {
+    color: #808080;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  header #admin {
+    display: block;
+    background-color: teal;
+    color: whitesmoke;
+    padding: 1rem;
+    border-radius: 0.8rem;
   }
 
   .swiperBox {
     width: 100%;
     height: 100%;
-  } 
+  }
 
   .swiper {
-      width: 100%;
-      height: 100%;
-      color: #000;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
   .swiperSlide {
-      width: 100%;
-      height: 100%;
-      background-position: center;
-      background-size: cover;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
   }
 
-  .swiper-button-next, .swiper-button-prev {
-    color: #000;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white !important;
     transform: scale(0.5);
   }
 }
 
 @media only screen and (min-width: 425px) {
-
 }
 
 @media only screen and (min-width: 576px) {
@@ -62,14 +95,86 @@ html * {
   html {
     font-size: 2vw;
   }
+  header div a h1 {
+    color: rgb(129, 129, 129);
+    font-size: 1.5rem;
+  }
+  header {
+    background-color: #ffffff;
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between !important;
+    padding-top: 0.5rem;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 1px 1px 10px #0404045e;
+  }
+  .containerHome .homeFilter .firstRow {
+    width: 108% !important;
+  }
+  /* .containerHome .containerHero {
+    width: 105vw;
+  } */
+  header > div:first-child {
+    margin: 1rem 2rem;
+  }
 }
 
 @media only screen and (min-width: 991px) {
+  /* header div:first-child {
+    margin: 1rem 3.2rem;
+  } */
+  header {
+    background-color: #ffffff;
+    width: 100%;
+    height: 3.2rem;
+    display: flex;
+    justify-content: space-between !important;
+    padding-top: 0.5rem;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 1px 1px 10px #0404045e;
+  }
+  header div a h1 {
+    text-shadow: none;
+    color: #6d6d6d;
+    font-size: 1.5rem;
+  }
+  /* .containerHome .containerHero {
+    height: 46rem;
+  } */
+  /* header div:first-child {
+    margin: 1rem 3.2rem;
+  }  */
 }
 
+@media only screen and (min-width: 1008px) {
+  header {
+    height: 3.2rem;
+  }
+}
 @media only screen and (min-width: 1024px) {
+  header {
+    height: 5rem;
+  }
   html {
     font-size: 1vw;
+  }
+  .containerHome .homeFilter .firstRow {
+    width: 105%;
+    margin-left: -13rem;
+    justify-content: flex-end;
+  }
+  .containerHome .homeFilter .secondRow {
+    width: 82%;
+  }
+  header div a h1 {
+    color: rgb(129, 129, 129);
+    font-size: 2rem;
+  }
+  header > div:first-child {
+    margin: 1rem 3rem;
   }
 }
 

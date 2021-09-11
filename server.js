@@ -9,7 +9,7 @@ const app = express()  // creo una instancia de Express (createApplication())
 const socket = require("socket.io");
 const jwt = require('jsonwebtoken')
 // dentro de app, vive el resultado de ejecutar el createApplication de express, me da un servidor listo para levantar
-
+// FILTRO MIDDLEWARE, antes de usar mi aplicación, uso el filtro. Para que pueda responder de origen cruzado
 app.use(cors())
 app.use(express.json())
 
@@ -36,7 +36,16 @@ const io = socket(serva, {
 
 let usersConnected = []
 let adminsConnected = []
+let didReset = false
 io.on("connection", (socket) => {
+    if(!didReset){
+        console.log("mande a resetear")
+        setTimeout(() => {
+            console.log("resetió")
+            io.sockets.emit("resetAll")
+        }, 4000)
+        didReset = true
+    }
     let error = null
     let verifiedUser = null
     try{
@@ -52,38 +61,58 @@ io.on("connection", (socket) => {
     if(verifiedUser._doc.admin){
         // console.log(socket.id)
         // console.log(verifiedUser._doc.admin)
-        console.log("Admin connected")
-        let newAdmin = {lastName: verifiedUser._doc.lastName, id: socket.id}
+        let newAdmin = {lastName: verifiedUser._doc.lastName, id: socket.id, eMail: verifiedUser._doc.eMail}
+        adminsConnected.forEach(admin => {
+            if(admin.eMail === newAdmin.eMail){
+                io.sockets.sockets.forEach((socket) => {
+                    // If given socket id is exist in list of all sockets, kill it
+                    if(socket.id === admin.id){
+                        socket.disconnect();
+                    }     
+                })
+            }
+        })
+        adminsConnected = adminsConnected.filter(admin => newAdmin.eMail !== admin.eMail)
         adminsConnected.push(newAdmin)
+        console.log("admin connected", newAdmin.eMail)
         usersConnected.forEach(user => socket.broadcast.to(user.id).emit('adminConnected', adminsConnected.length))
         socket.emit("userConnected", usersConnected)
     }else{
         // console.log(socket.id)
         // console.log(verifiedUser._doc.admin)
-        console.log("User connected")
+        
         let newUser = {eMail: verifiedUser._doc.eMail, id: socket.id, firstName: verifiedUser._doc.firstName}
+        // console.log(newUser.eMail)
+        usersConnected.forEach(user => {
+            // console.log(newUser.eMail)
+            // console.log(usersConnected)
+            if(user.eMail === newUser.eMail){
+                // console.log("entre")
+                io.sockets.sockets.forEach((socket) => {
+                    // console.log(socket.id)
+                    // If given socket id is exist in list of all sockets, kill it
+                    if(socket.id === user.id){
+                        console.log("mande reset y disconnect")
+                        socket.emit("resetAll")
+                        socket.disconnect();
+                    } 
+                })
+            }
+        })
+        usersConnected = usersConnected.filter(admin => newUser.eMail !== admin.eMail)
         usersConnected.push(newUser)
+        console.log("User connected", newUser.eMail)
         adminsConnected.forEach(user => socket.broadcast.to(user.id).emit('userConnected', usersConnected))
         socket.emit("adminConnected", adminsConnected.length)
     }
-    // socket.on("newClientMessage", (newMessage) => {
-    //     console.log("llego mensaje de cliente")
-    //     if(adminsConnected.length > 0){
-    //         socket.broadcast.to(adminsConnected[0].id).emit("newClientMessage", {message: newMessage, sender: socket.id})
-    //     }
-    // })
-    // socket.on("newAdminMessage", (newMessage) => {
-    //     // console.log("llego mensaje de admin a cliente")
-    //     // console.log(newMessage)
-    //     if(usersConnected.some(user => user.id === newMessage.sendTo)){
-    //         socket.broadcast.to(newMessage.sendTo).emit("newAdminMessage", {message: newMessage.message, sender: socket.id })
-    //     }
-    // })
+    // console.log(io.sockets.sockets)
     socket.on("newMessageTo", (msgInfo) =>{
-        console.log(msgInfo)
+        // console.log(msgInfo)
         socket.broadcast.to(msgInfo.sendTo).emit("newMessage", {message: msgInfo.message, sender: socket.id})
     })
     socket.on("clientNeedHelp", () =>{
+        console.log(socket.id)
+        console.log("pedido de ayuda")
        adminsConnected.forEach(admin => socket.broadcast.to(admin.id).emit("clientNeedHelp", {sender: socket.id}))
     })
     socket.on("iWillHelp", (whoToHelp) =>{

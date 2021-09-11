@@ -24,7 +24,7 @@ const agentControllers = {
             .then(agent => res.json({success: true, response: agent}))
             .catch(err => handleError(res,err))
         }else{
-            res.json({success: false, response: "You don't have permissions"})
+            res.json({success: false, response: "No tienes los permisos"})
         }   
     },
     removeAnAgent:(req, res) =>{
@@ -32,11 +32,11 @@ const agentControllers = {
         if(req.user.admin){
             Agent.findOneAndDelete({_id: req.body._id})
             .then(agent => {
-                agent ? res.json({success: true, response: agent}) : res.json({success: false, response: "no agent found"})
+                agent ? res.json({success: true, response: agent}) : res.json({success: false, response: "no se encontro el agente"})
             })
             .catch(err => handleError(res,err))
         }else{
-            res.json({success: false, response: "You don't have permissions"})
+            res.json({success: false, response: "No tienes los permisos"})
         }
     },
     modifyAnAgent:(req, res)=>{
@@ -44,11 +44,11 @@ const agentControllers = {
         if(req.user.admin){
             Agent.findOneAndUpdate({_id: req.body._id}, {...req.body}, {new:true})
             .then(agent => {
-                agent ? res.json({success: true, response: agent}) : res.json({success: false, response: "no agent found"})
+                agent ? res.json({success: true, response: agent}) : res.json({success: false, response: "no se encontro el agente"})
             })
             .catch(err => handleError(res,err))
         }else{
-            res.json({success: false, response: "You don't have permissions"})
+            res.json({success: false, response: "No tienes los permisos"})
         }
     }
 }

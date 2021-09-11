@@ -1,0 +1,97 @@
+@media only screen and (min-width: 375px) {
+    
+    .wishList {
+        background-color: lightgray;
+        width: 90vw;
+        min-height: 20vh;
+        max-height: 100vh;
+        overflow: auto;
+        padding: 3vw 1.5vw;
+        position: absolute;
+        top: 5rem;
+        right: 5vw;
+        border: 1px solid gray;
+    }
+
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+      }
+    
+    .wishList .wishListTitle {
+        position: relative;
+        width: 100%;
+        padding: 0 1vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .wishList .wishListTitle .closeButton {
+        font-size: 1.8rem;
+        padding-top: 0.4rem;
+    }
+    
+    .wishList .wishListBox {
+        width: 100%;
+        min-height: 5vh;
+        margin: 0 auto;
+    }
+
+    .wishList .wishListBox .wishListItem {
+        transform: scale(0.8);
+    }
+
+    .wishList .wishListBox .wishListItem .cardProperty {
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 425px) {
+}
+
+@media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
+
+    .wishList .wishListBox {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        
+    }
+
+    .wishList .wishListBox .wishListItem .cardProperty {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    .wishList {
+        z-index: 2;
+    }
+
+    .wishList .wishListTitle { 
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}

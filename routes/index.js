@@ -56,6 +56,17 @@ router.route('/user/managefilter')
     passport.authenticate('jwt', {session: false}),
     userControllers.manageDreamHouseOfUser
 )
+// USER ROUTES LIKE PROP, TRAER FAV PROPS
+router.route('/user/like/:id')
+.get(
+    passport.authenticate('jwt', {session: false}), 
+    userControllers.updateLikedProperties
+)
+router.route('/user/favourites')
+.get(
+    passport.authenticate('jwt', {session: false}),
+    userControllers.populateProperties
+)
 // USER ROUTES ADMIN / SUPPORT POWERS
 router.route('/user/manageuser')
 .put(

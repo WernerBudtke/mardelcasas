@@ -1,12 +1,23 @@
 @media only screen and (min-width: 375px) {
   main {
     padding-bottom: 2rem;
+    /* background-image: url("../assets/4.jpg"); */
+    /* background-color: rgb(180, 180, 180); */
+    backdrop-filter: blur(14.5px);
+    background-position: 100% -111%;
+    background-size: cover;
+  }
+
+  main:before {
+    content: "";
+    position: absolute;
+    background-color: rgb(20, 20, 20);
   }
   main .mainTitle {
     text-align: center;
-    color: rgb(48, 66, 168);
+    color: rgb(119, 119, 119);
     padding: 2rem 0;
-    border-top: 20px solid blue;
+    border-top: 20px solid rgb(133, 133, 133);
   }
 
   .mainCityCarBox {
@@ -33,12 +44,13 @@
     border-radius: 0.5rem;
     background-position: center;
     background-size: cover;
+    box-shadow: 0.5px 0.5px 8px #0f0f0f69;
   }
 
   .divCard .cardCity:before {
     content: "";
     position: absolute;
-    background-color: #020202;
+    background-color: #020202af;
     opacity: 0.5;
     width: 20rem;
     height: 18rem;
@@ -63,10 +75,8 @@
 @media only screen and (min-width: 425px) {
 }
 @media only screen and (min-width: 576px) {
-
 }
 @media only screen and (min-width: 768px) {
-
   .mainCityCarBox {
     width: 88%;
     margin: 0 auto;
@@ -74,35 +84,31 @@
     flex-direction: row;
     justify-content: space-around;
   }
-
-  .divCard .cardCity {
-
-  }
-
 }
 @media only screen and (min-width: 991px) {
 }
 
 @media only screen and (min-width: 1024px) {
-
+  main {
+    height: 85vh;
+    background-image: url("../assets/10.jpg");
+    backdrop-filter: blur(14.5px);
+    background-position: 100% 70%;
+    background-size: cover;
+  }
   .mainCityCarBox {
-    width: 88%;
-    margin: 0 auto;
+    width: 100%;
+    padding-left: -13rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
   }
 
-  .divCard .cardCity {
-    width: 40rem;
-    height: 22rem;
-  }
-
+  .divCard .cardCity,
   .divCard .cardCity:before {
-    width: 40rem;
-    height: 22rem;
+    width: 17rem;
+    height: 17rem;
+    margin: 1rem;
   }
-
 }
 
 @media only screen and (min-width: 1440px) {

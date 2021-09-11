@@ -1,37 +1,47 @@
 @media only screen and (min-width: 375px) {
-
-  .navBar{
-    width: 6rem;
+  .navBar {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 10rem;
   }
-
+  .navBar .logoUser {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 66%;
+    box-shadow: 0.5px 0.5px 4px #80808082;
+  }
   .navBar button {
     outline: none;
     border: none;
     background-color: transparent;
     align-self: center;
+    cursor: pointer;
   }
 
   .navBar .userMenu {
+    margin-top: -0.2rem;
     width: 100%;
-    background-color: #fff;
-    border: 0.2rem solid rgb(46, 110, 139);
+    background-color: rgba(255, 255, 255, 0.884);
     border-radius: 0.3rem;
     position: absolute;
-    top: 3.3rem;
+    top: 3.8rem;
     z-index: 2;
+    backdrop-filter: blur(14.5px);
+    box-shadow: 6px 2px 5px #2e302e7a;
+    margin-left: -2rem;
   }
 
   .navBar .userMenu > a {
     width: 100%;
     display: block;
     color: black;
-    padding: 1rem 0;
-    border-bottom: 0.2rem solid rgb(46, 110, 139);
-    text-align: center;
+    padding: 1rem 1.5rem;
+    /* border-bottom: 0.1px solid rgb(46 110 139 / 26%); */
+    text-align: start;
     text-decoration: none;
   }
 
@@ -54,12 +64,15 @@
     top: 11vh;
     right: 28vw;
   }
-
+  .navBar .userMenu > a:hover {
+    background-color: rgba(184, 184, 184, 0.212);
+  }
 }
 
-
 @media only screen and (min-width: 425px) {
-
+  .navBar .userMenu {
+    margin-top: -0.5rem;
+  }
 }
 
 @media only screen and (min-width: 576px) {
@@ -72,9 +85,16 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .navBar .userMenu {
+    width: 13rem;
+    margin-top: 1.2rem;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
+  .navBar .userMenu {
+    margin-top: 0.5rem;
+  }
 }
 
 @media only screen and (min-width: 2560px) {

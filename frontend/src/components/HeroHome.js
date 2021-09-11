@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "./Header";
-import HomeFilter from "./HomeFilter";
+import React from "react"
+import Header from "./Header"
+import HomeFilter from "./HomeFilter"
 
 const HeroHome = () => {
   
@@ -9,7 +9,7 @@ const HeroHome = () => {
       <Header />
       <HomeFilter />
     </div>
-  );
-};
+  )
+}
 
-export default HeroHome;
+export default HeroHome

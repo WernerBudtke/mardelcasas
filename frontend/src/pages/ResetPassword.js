@@ -1,22 +1,44 @@
-import "../styles/App.css";
-import React from "react";
-import userActions from "../redux/action/userActions";
-import { connect } from "react-redux";
-import { useState } from "react";
+import "../styles/App.css"
+import React from "react"
+import userActions from "../redux/action/userActions"
+import { connect } from "react-redux"
+import { useState } from "react"
+import Swal from "sweetalert2"
+
 const ResetPassword = (props) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({})
   const submitPassword = async () => {
     try {
-      let res = await props.sendIdPassword(props.match.params.id, user);
+      let res = await props.sendIdPassword(props.match.params.id, user)
       if (res.success) {
-        alert("Tu contraseña se cambió con éxito");
-        return props.history.push("/");
+        renderToast("Tu contraseña se cambió con éxito", "success")
+        return props.history.push("/")
+      } else {
+        throw new Error()
       }
-      if (!res.success) throw res;
-    } catch (e) {
-      console.log(e);
+    } catch {
+      renderToast("Hubo un error, intente nuevamente más tarde", "warning")
     }
-  };
+  }
+
+  const renderToast = (message, type) => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 4000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer)
+        toast.addEventListener("mouseleave", Swal.resumeTimer)
+      },
+    })
+    Toast.fire({
+      icon: type,
+      title: message,
+    })
+  }
+
   return (
     <div className="formSign">
       <form>
@@ -34,10 +56,11 @@ const ResetPassword = (props) => {
         <button onClick={submitPassword}>Enviar</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const mapDispatchToProps = {
   sendIdPassword: userActions.sendIdPassword,
-};
-export default connect(null, mapDispatchToProps)(ResetPassword);
+}
+
+export default connect(null, mapDispatchToProps)(ResetPassword)

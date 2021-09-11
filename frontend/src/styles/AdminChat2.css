@@ -1,0 +1,164 @@
+.errorBackend {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2B302A;
+  color: #EAD7DB;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.supportChatContainer h4 {
+  font-size: 1.5rem;
+}
+.supportChatContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(212, 212, 212);
+}
+.sendContainerChat {
+  width: 40%;
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.sendContainerChat > * {
+  padding: 1rem;
+  width: 100%;
+  margin: 0.3rem 0;
+}
+.chatBoxHandler {
+  width: 58%;
+  margin: 0 1rem;
+  order: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(54, 54, 54) 0%,
+    rgb(68, 68, 68) 0%,
+    rgb(54, 54, 54) 100%
+  );
+  border-radius: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 96vh;
+  box-shadow: 0.5px 0.5px 4px #00000082;
+}
+
+.peopleToHelpContainer {
+  order: 1;
+  padding: 2rem;
+  height: 31.5vh;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgb(54, 54, 54) 0%,
+    rgb(68, 68, 68) 0%,
+    rgb(54, 54, 54) 100%
+  );
+}
+/* 8f3900 */
+.handleWhoToHelpContainer {
+  order: 2;
+  height: 31vh;
+  padding: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgb(54, 54, 54) 0%,
+    rgb(68, 68, 68) 0%,
+    rgb(54, 54, 54) 100%
+  );
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.whoImHelpingContainer:first-child {
+  padding: 2rem;
+  order: 3;
+  height: 31vh;
+  background: linear-gradient(
+    90deg,
+    rgb(54, 54, 54) 0%,
+    rgb(68, 68, 68) 0%,
+    rgb(54, 54, 54) 100%
+  );
+  border-radius: 0;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.whoImHelpingContainer {
+  padding: 2rem;
+  order: 3;
+  height: 31vh;
+  background: linear-gradient(
+    90deg,
+    rgb(54, 54, 54) 0%,
+    rgb(68, 68, 68) 0%,
+    rgb(54, 54, 54) 100%
+  );
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.supportChatContainer h4:nth-child(2) {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.chatBox {
+  width: 58vw;
+  font-size: 1.2rem;
+  height: 22.2rem;
+  overflow-x: hidden;
+  width: 55vw;
+  border: 1px solid #ffffff21;
+}
+.chatBox p {
+  background-color: rgba(204, 199, 199, 0.329);
+  padding: 1rem;
+  margin: 2rem;
+  width: 90%;
+  overflow-x: auto;
+  word-break: break-all;
+}
+.inputToSend {
+  width: 93%;
+  display: flex;
+  justify-content: space-around;
+}
+.inputToSend input,
+.handleWhoToHelpContainer input {
+  width: 90% !important;
+  padding: 1.1rem;
+  border: none;
+  outline: none;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.inputToSend button,
+.handleWhoToHelpContainer button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  padding-left: 0.5rem;
+  cursor: pointer !important;
+}
+
+.handleWhoToHelpContainer input {
+  padding: 0.5rem;
+  border-radius: 0;
+}
+.inputToSend button:hover,
+.handleWhoToHelpContainer button:hover {
+  font-size: 1rem;
+  transition: 0.2s;
+}

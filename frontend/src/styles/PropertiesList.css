@@ -1,5 +1,36 @@
-@media only screen and (min-width: 375px) {
+.propertiesListNoHousesDiv {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10%;
+    width: 80%;
+    height: 200px;
+    border-radius: 0.5rem;
+}
 
+.propertiesListNoHousesDiv .imageDiv {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    width: 80%;
+    height: 200px;
+    border-radius: 0.5rem;
+    box-shadow: 0.5px 0.5px 8px #0f0f0f;
+}
+
+/* .propertiesListNoHousesDiv .imageDiv:before {
+content: "";
+position: absolute;
+background-color: #020202af;
+opacity: 0.5;
+width: 80%;
+height: 200px;
+border-radius: 0.5rem;
+overflow: hidden;
+} */
+
+.propertiesListNoHousesDiv p {
+    /* color: white; */
+    z-index: 20;
 }
 
 @media only screen and (min-width: 425px) {

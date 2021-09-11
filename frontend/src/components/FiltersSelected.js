@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { XOctagon } from 'react-bootstrap-icons'
 import { connect } from "react-redux"
 import propertiesActions from '../redux/action/propertiesActions'
-
+import Swal from "sweetalert2"
 
 const FiltersSelected = (props) => {
-    const {deletePropertieFromObject, formFilter, setFormFilter, cities, getPropertiesFiltered} = props
+    const {deletePropertieFromObject, formFilter, setFormFilter, cities, getPropertiesFiltered, selectFilters} = props
     const [filtersSelected, setFiltersSelected] = useState([])
     console.log("Estoy en FiltersSelected")
     useEffect(() => {
         console.log("FiltersSelected")
         console.log("Array de Formfilter en UseEffect", formFilter)
         console.log("filtros listos para eliminar", filtersSelected)
-        let arrayAux =[] 
-
+        let arrayAux = [] 
         Object.keys(formFilter).forEach((key, i) =>{
-            if (!(formFilter[key] === "allCases" || formFilter[key] === false || formFilter[key] === "")){ 
+            
+            if (!(formFilter[key] === "allCases" || formFilter[key] === false || formFilter[key] === "" || key === "shortRental" || key === "forSale" || key === "roofedArea") ){ 
                 let nameDelete, valueDelete
                 switch (key) {
                     case "operation":
@@ -25,12 +25,12 @@ const FiltersSelected = (props) => {
                         } else  if (formFilter.operation === "forRental") {
                             valueDelete = "Alquiler"
                         } else {
-                            valueDelete = "Alquiler Termporario"
+                            valueDelete = "Alquiler Temporario"
                         }
                         break;
                     case "city":
                         nameDelete = "Ciudad/Región: "
-                        valueDelete = formFilter.city
+                        valueDelete = cities.filter(city => city._id === formFilter.city)[0].cityName
                         break;
                     case "isHouse":
                         nameDelete = "Tipo: "
@@ -62,7 +62,11 @@ const FiltersSelected = (props) => {
                         break;
                     case "roofedArea":
                         nameDelete = "Area Cubierta: "
-                        switch (formFilter.roofedArea) {
+                        let valueRoofed = formFilter.roofedArea
+                        if(typeof formFilter.roofedArea === "object"){
+                            valueRoofed = JSON.stringify(formFilter.roofedArea)
+                        }
+                        switch (valueRoofed) {
                             case '{"$lte": 40}':
                                 valueDelete = "hasta 40m²"
                                 break;
@@ -73,7 +77,7 @@ const FiltersSelected = (props) => {
                                 valueDelete = "81m² a 200m²"
                                 break;
                             case '{"$gte":201,"$lte": 600}':
-                                valueDelete = "201m² a 600m²²"
+                                valueDelete = "201m² a 600m²"
                                 break;
                             case '{"$gte":600}':
                                 valueDelete = "600m² o más"
@@ -110,9 +114,28 @@ const FiltersSelected = (props) => {
         setFiltersSelected(arrayAux)
     }, [formFilter])
 
-    const resetInputSelect = (nameInputSelect, i) => {
+    const renderToast = (message, type) => {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+          },
+        })
+        Toast.fire({
+          icon: type,
+          title: message,
+        })
+      }
+    
+    const resetInputSelect = (e, nameInputSelect, i) => {
         console.log(nameInputSelect)
         let initialValue
+        console.log("para colocar efecto", e.target)
         switch (nameInputSelect) {
             case "operation":
             case "city":
@@ -140,25 +163,27 @@ const FiltersSelected = (props) => {
         console.log("Array de bloques antes de eliminar uno", filtersSelected)
         setFiltersSelected( filtersSelected.filter((block, j) => i!==j))
         setFormFilter( { ...formFilter, [nameInputSelect]: initialValue})
-        let newFilter = deletePropertieFromObject(nameInputSelect) // cambiar el objeto filter en redux
+        let newFilter = deletePropertieFromObject(nameInputSelect) 
         console.log("nuevo filtro despues de eliminar bloque", newFilter)
-        // getPropertiesFiltered(newFilter)
-        // .then(res => {
-        //     if(!res.data.success){
-        //         throw new Error('Something went wrong')
-        //     }
-        //     console.log(res.data.response)
-        // })
-        // .catch(err => console.log(err))
+        getPropertiesFiltered(newFilter)
+        .then(res => {
+            if(!res.success){
+                throw new Error(res.error)
+            }
+        })
+        .catch(err => {
+            renderToast(err, "warning")
+        })
     }
 
     return (
-        <div className="filtersSelected">
+        <div className={!selectFilters ? "filtersSelected expandWidth" : "filtersSelected"}>
+            {(!selectFilters && filtersSelected.length>0) && <p className="infoP">Filtros Seleccionados: </p>}
             {filtersSelected.map((eachFilter, i) => {
                 if (eachFilter) {
                     return <p 
                                 key={eachFilter[2] + "F"}
-                                onClick={() => resetInputSelect(eachFilter[2], i)}
+                                onClick={(e) => resetInputSelect(e, eachFilter[2], i)}
                             >
                                 {`${eachFilter[0]} ${eachFilter[1]} `}<XOctagon/> 
                             </p> 

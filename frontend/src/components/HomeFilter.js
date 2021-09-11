@@ -2,32 +2,47 @@ import React, {useState } from 'react'
 import { connect } from "react-redux"
 import { useHistory } from "react-router-dom"
 import propertiesActions from '../redux/action/propertiesActions'
+import Swal from "sweetalert2"
 
 const HomeFilter = (props) => {
 
-    const [filter, setFilter] = useState({ forSale: true, shortRental: false,isBrandNew: false, haveGarage: false })
+    const [filter, setFilter] = useState({ forSale: true, shortRental: false})
 
     const history = useHistory()
 
+    const renderToast = (message, type) => {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer)
+            toast.addEventListener("mouseleave", Swal.resumeTimer)
+          },
+        })
+        Toast.fire({
+          icon: type,
+          title: message,
+        })
+    }
+    
     const searchInPropertiesList = async () => {
-        console.log(filter)
         try {            
             let res = await props.getPropertiesFiltered(filter)
-            console.log("array de propiedades en home despues de hacer primera busqueda")
-            console.log(res.data.response)
-            if (!res.data.success) {
-                throw res.data.response
+            if (!res.success) {
+                throw new Error()
             } else {
                 history.push("/lista-de-propiedades") 
             }
-            if (!res.data.response) throw res.data.response
-        } catch (err) {
-            console.log(err)
+            if (!res.response) throw res.response
+        } catch {
+            renderToast("Tenemos un problema, por favor intenta más tarde", "warning")
         }
     }
 
     const changeClassHandle = (e) => {
-        e.preventDefault()
         let elementClicked = e.target.dataset.type
         let childrenUl = e.target.parentNode.children 
         var forSaleValue = true

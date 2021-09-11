@@ -1,0 +1,317 @@
+@media only screen and (min-width: 375px) {
+    .bigFilter {
+        background-color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.3rem;
+        padding-top: 2rem;
+    }
+
+    .bigFilter .bigFilterBox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bigFilter .bigFilterBox>div:first-child {
+        /* min-height: 5rem; */
+        /* background-color: green; */
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+    }
+
+    /* BOTON VER MAS FILTROS */
+    .bigFilter .bigFilterBox div button {
+        align-self: flex-end;
+        width: 8rem;
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        border: 1px solid gray;
+        background-color: white;
+        border-radius: 0.3rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    /* FILTROS SELECCIONADOS */
+    .bigFilter div .filtersSelected {
+        /* align-self: flex-start; */
+        margin: .8rem 0;
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: hotpink;
+    }
+
+    .bigFilter div .filtersSelected p.infoP{
+        background-color: transparent;
+        border: none;
+        text-decoration: underline;
+    }
+    
+    .bigFilter div .filtersSelected p{
+        display: inline-block;
+        vertical-align: middle;
+        background-color: red;
+        padding: 0.3rem;
+        margin: 0.1rem 0.2rem;
+        border-radius: 0.3rem;
+        border: 1px solid black;
+        cursor: pointer;
+        animation: bounceIn;
+        animation-duration: 1s;
+    }
+    .bigFilter div .filtersSelected p *{ 
+        vertical-align: middle;
+    }
+
+    /* algunos ajustes compartidos por varios */
+    .bigFilter .filtersToSelect * select:focus, input:focus {
+        outline: 1px solid transparent;
+    }
+
+    .bigFilter .bigFilterBox {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .bigFilter .filtersToSelect {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .bigFilter .filtersToSelect * select {
+        width: 100%;
+        box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.10);
+    }
+    
+    .bigFilter .bigFilterBox .filtersSelected * input {
+        box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.10);
+    }
+
+    .bigFilter .filtersToSelect>div {
+        margin: 0.3rem 0;
+        gap: .2rem;
+    }
+
+    /* estilos por cada linea que se meustra */
+    
+    .bigFilter .filtersToSelect>div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(1) div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(1) div select {
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+
+    .propiedadBigFilterDesktopResponsive {
+        visibility: hidden;
+        max-width: 0;
+        max-height: 0;
+    }
+
+    .bigFilter .filtersToSelect>div:nth-child(2) {
+        visibility: visible;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(2) select {
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(3) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(3) div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(3) select {
+        width: 100%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(4) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bigFilter .filtersToSelect>div:nth-child(4) h5 {
+
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(4) select {
+        width: 100%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(4) div {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0rem;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(4)>div>input {
+        width: 100%;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+
+    .metrosBigFilterDesktopResponsive {
+        visibility: hidden;
+        max-width: 0;
+        max-height: 0;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(5) {
+        visibility: visible;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(5) select {
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(6) {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(6)> div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bigFilter .filtersToSelect>div:nth-child(6)> div > div{
+        width: 100%;
+        padding: 0.5rem 0 0.5rem 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .bigFilter .filtersToSelect>div:nth-child(6)> div > div input {
+        margin-right: 1rem;
+        border: 1px solid gray;
+    }
+    
+    .buscarBigFilterResponsiveDesktop {
+        visibility: hidden;
+        max-width: 0;
+        max-height: 0;
+    }
+
+    .bigFilter .filtersToSelect div:nth-child(7) {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .bigFilter .filtersToSelect div:nth-child(7) button {
+        visibility: visible;
+        background-color: white;
+        width: 60%;
+        height: 3rem;
+        border: 1px solid gray;
+        font-size: 1.3rem;
+        border-radius: 0.3rem;
+    }
+    
+    .bigFilter .sortList {
+        background-color: #829ba4;
+        height: 9vh;
+        display: flex;
+        justify-content: flex-end;
+    } 
+    
+    .bigFilter .sortList select {
+        width: 40%;
+        height: 7vh;
+        font-size: 0.8rem;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+        margin-right: 1.2rem;
+        border: 1px solid gray;
+        border-radius: 0.3rem;
+    }
+
+    .bigFilter .sortList select:focus {
+        outline: 1px solid transparent;
+    }
+
+}
+
+@media only screen and (min-width: 425px) {
+
+}
+
+@media only screen and (min-width: 576px) {
+}
+
+@media only screen and (min-width: 768px) {
+    .bigFilter .bigFilterBox {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .bigFilter .bigFilterBox>div:first-child {
+        margin-left: 1rem;
+    }
+
+    .bigFilter .bigFilterBox div .filtersSelected {
+        flex: none;
+        width: 18rem;
+        background-color: green;
+    }
+
+    .bigFilter .bigFilterBox div .expandWidth{
+        max-width: 100%;
+        margin-left: -1rem;        
+    }
+    
+} 
+
+@media only screen and (min-width: 991px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}

@@ -24,7 +24,7 @@ const cityControllers = {
             .then(city => res.json({success: true, response: city}))
             .catch(err => handleError(res,err))
         }else{
-            res.json({success: false, response: "You don't have permissions"})
+            res.json({success: false, response: "No tienes permisos"})
         }   
     },
     removeACity:(req, res) =>{
@@ -32,11 +32,11 @@ const cityControllers = {
         if(req.user.admin){
             City.findOneAndDelete({_id: req.body._id})
             .then(city => {
-                city ? res.json({success: true, response: city}) : res.json({success: false, response: "no city found"})
+                city ? res.json({success: true, response: city}) : res.json({success: false, response: "no se encontro la ciudad"})
             })
             .catch(err => handleError(res,err))
         }else{
-            res.json({success: false, response: "You don't have permissions"})
+            res.json({success: false, response: "No tienes permisos"})
         }
     },
     modifyACity:(req, res)=>{
@@ -44,11 +44,11 @@ const cityControllers = {
         if(req.user.admin){
             City.findOneAndUpdate({_id: req.body._id}, {...req.body}, {new:true})
             .then(city => {
-                city ? res.json({success: true, response: city}) : res.json({success: false, response: "no city found"})
+                city ? res.json({success: true, response: city}) : res.json({success: false, response: "no se encontro la ciudad"})
             })
             .catch(err => handleError(res,err))
         }else{
-            res.json({success: false, response: "You don't have permissions"})
+            res.json({success: false, response: "No tienes permisos"})
         }
     }
 }

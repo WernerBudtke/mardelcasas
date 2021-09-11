@@ -1,161 +1,204 @@
-div.propertiesCardList{
-    width: 100%;
-    padding: 5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+div.propertiesCardList {
+  width: 100%;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
-.cardProperty{
-    width: 90%;
-    height: 20rem;
-    background-color: #a8433d;
-    color: white;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    display: block;
+.cardProperty {
+  width: 90%;
+  height: 20rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: block;
+  border: 1px solid rgb(197, 197, 197);
 }
 
-div.pictureCardProperty{
-    width: 100%;
-    height: 80%;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.6rem; 
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-} 
-
-    
-div.pictureCardProperty h3{
-    align-self: flex-end;
-    background-color: #a8433d;
-    padding: 0.2rem 0.3rem;
-    border-radius: 0.3rem;
+div.pictureCardProperty {
+  width: 100%;
+  height: 80%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.6rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
-div.pictureCardProperty h4{
-    background-color: black;
-    align-self: flex-start;
-    padding: 0.1rem 0.3rem;
-    border-radius: 0.2rem;
+div.pictureCardProperty h3 {
+  align-self: flex-end;
+  background-color: #03a022;
+  padding: 0.2rem 0.3rem;
 }
 
-div.cardPropertyInfo{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.2rem 0.5rem; 
-    width: 100%;   
-    height: 20%;
+div.pictureCardProperty h4 {
+  background-color: rgb(36, 39, 219);
+  align-self: flex-start;
+  padding: 0.1rem 0.3rem;
 }
 
-div div p.propertyInfoTwo{
-    font-size:0.8rem;
+div.cardPropertyInfo {
+  color: rgb(80, 80, 80);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.2rem 0.5rem;
+  width: 100%;
+  height: 20%;
 }
 
-div div p.propertyInfoThree{
-    font-size: 1.1rem;
+div div p.propertyInfoTwo {
+  font-size: 0.8rem;
 }
 
-div.infoHeader h3, div.infoHeader h4{
-    display: none;
+div div p.propertyInfoThree {
+  font-size: 1.1rem;
+}
+div.infoHeader h4 {
+  background-color: rgb(36, 39, 219);
+  color: white;
+  padding: 0.5rem;
+  width: 13rem;
+  margin-top: -5rem;
+}
+div.infoHeader h3 {
+  background-color: #03a022;
+  width: 8rem;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem;
+  margin-top: -5rem;
+  margin-left: 0.5rem;
+}
+div.infoHeader h3,
+div.infoHeader h4 {
+  display: none;
 }
 
-.Desktop{
-    display: none;
+.Desktop {
+  display: none;
+}
+.bigFilter div button,
+.bigFilter .sortList select,
+select {
+  cursor: pointer;
+}
+.bigFilter div button:hover {
+  background-color: #ff8a2aef !important;
 }
 
+.bigFilter .sortList {
+  background-color: orange;
+}
 @media only screen and (min-width: 768px) {
-    div.propertiesCardList{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  div.propertiesCardList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .cardProperty {
-        width: 45%;
-    }
-    div.pictureCardProperty{
-        justify-content: end;
-    }
-    
+  .cardProperty {
+    width: 45%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-    #desktop{
-        display: block;
-    }
-    
-    #mobile{
-        display: none;
-    }
-    
-    .cardProperty{
-        height: 12rem;
-        display: flex;
-        background-color: #ead7db;
-    }
-    
-    div.pictureCardProperty{
-        width: 45%;
-        height: 100%;
-        border-top-right-radius: 0rem;
-        border-bottom-left-radius: 0.5rem;
-    }
-    
-    div.cardPropertyInfo{
-        width: 55%;
-        height: 100%;
-        padding: 0.4rem 1rem; 
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        color: black;
-        border-top: solid 2px #986f6d;
-        border-bottom: solid 2px #986f6d;
-        border-right: solid 2px #986f6d;
-        border-top-right-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
-    }
-    
-    div.pictureCardProperty h3{
-        cursor: pointer;
-    }
-    
-    div.infoHeader h3, div.infoHeader h4{
-        display: inline;
-    }
-    
-    div div div.infoHeader{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    div div p.propertyInfoTwo, div div p.propertyInfoOne, div div p.propertyInfoThree{
-        width: 100%;
-    }
-    
-    div div p.propertyInfoThree{
-        text-align: end;
-    }
-    
-    div div p.propertyInfoOne{
-        font-size: 1.2rem;
-    }
-    
-    div div p.propertyInfoTwo{
-        font-size: 1rem;
-    }
-    
-    div div p.propertyInfoThree{
-        font-size: 1.3rem;
-    }
+  #desktop {
+    display: block;
+  }
+
+  #mobile {
+    display: none;
+  }
+
+  .cardProperty {
+    height: 20rem;
+    display: flex;
+    background-color: #ffffff;
+    border: 1px solid rgba(128, 128, 128, 0.363);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.253);
+  }
+  .cardProperty:hover {
+    transform: scale(1.03);
+    transition: transform 0.5s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.253);
+  }
+  div.pictureCardProperty {
+    width: 45%;
+    height: 100%;
+    padding: 0rem;
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  div.cardPropertyInfo {
+    width: 55%;
+    height: 100%;
+    padding: 0.4rem 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #6b6b6b;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  .infoHeader .buttom {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    width: 5rem;
+    background-color: #f97406ef;
+    padding: 0.5rem 1rem;
+    text-shadow: 1px 1px 0px rgb(0 0 0 / 62%);
+    box-shadow: 1px 2px 5px rgb(0 0 0 / 40%);
+  }
+
+  div.pictureCardProperty h3 {
+    cursor: pointer;
+  }
+
+  div.infoHeader h3,
+  div.infoHeader h4 {
+    display: inline;
+  }
+
+  div div div.infoHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  div div p.propertyInfoTwo,
+  div div p.propertyInfoOne,
+  div div p.propertyInfoThree {
+    width: 100%;
+  }
+
+  div div p.propertyInfoThree {
+    text-align: end;
+  }
+
+  div div p.propertyInfoOne {
+    font-size: 1.2rem;
+  }
+
+  div div p.propertyInfoTwo {
+    font-size: 1rem;
+  }
+
+  div div p.propertyInfoThree {
+    font-size: 1.3rem;
+  }
 }
 
 @media only screen and (min-width: 1440px) {

@@ -1,0 +1,21 @@
+.banAnAccount {
+    background-color: gray;
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banAnAccount .banAnAccountButton {
+    width: 20vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banAnAccount .banAnAccountButton > button {
+    padding: 1vh 2vw;
+
+}
+

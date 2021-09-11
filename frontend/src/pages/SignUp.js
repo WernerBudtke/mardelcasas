@@ -1,73 +1,106 @@
-import "../styles/Form.css";
-import React from "react";
-import { Link } from "react-router-dom";
-import NavBar from "../components/Navbar";
-import { useState } from "react";
-import { connect } from "react-redux";
-import userActions from "../redux/action/userActions";
-import GoogleLogin from "react-google-login";
+import "../styles/Form.css"
+import React from "react"
+import { Link } from "react-router-dom"
+import NavBar from "../components/Navbar"
+import { useState } from "react"
+import { connect } from "react-redux"
+import userActions from "../redux/action/userActions"
+import GoogleLogin from "react-google-login"
+import Swal from "sweetalert2"
 
 const SignUp = (props) => {
-  const [errors, setErrors] = useState([]);
+  const [openValidation, setOpenValidation] = useState(false)
+  const [errors, setErrors] = useState([])
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
     password: "",
     eMail: "",
     photoURL: "",
-  });
+  })
 
-  const inputNameHandler = (e) => {
+  const renderToast = (message, type) => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 4000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer)
+        toast.addEventListener("mouseleave", Swal.resumeTimer)
+      },
+    })
+    Toast.fire({
+      icon: type,
+      title: message,
+    })
+  }
+
+  const inputHandler = (e) => {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
+
   const submitUser = async () => {
     if (Object.values(user).includes("")) {
-      console.log("todos los campos son obligatorios");
+      setErrors([
+        { message: "Todos los campos son obligatorios", path: ["extra"] },
+      ])
     } else if (!user.eMail.includes("@")) {
-      console.log("Por favor ingrese un mail válido");
+      setErrors([
+        { message: "Por favor ingrese un mail válido", path: ["extra"] },
+      ])
     } else {
       try {
-        let res = await props.registerUser(user);
+        let res = await props.registerUser(user)
+        console.log(res)
         if (!res.success) {
-          if (res.response) throw res.response;
-          else setErrors(res.errors);
-          console.log(res);
-        } else if (res.success) {
+          typeof res.errors !== "string" ?
+          setErrors(res.errors) :
+          renderToast("Hubo un error, intente nuevamente más tarde", "warning")
+        } else {
           try {
-            console.log("Usuario registrado con éxito");
+            renderToast("Usuario registrado con éxito", "success")
             let responseSendEmail = await props.validationUserToken(
               res.response.token
-            );
+            )
             if (responseSendEmail.success)
-              console.log("Te enviamos un mail para que valides tu cuenta");
+              renderToast("Te enviamos un mail para que valides tu cuenta", "success")
             else {
-              console.log("Hubo un error, intente nuevamente más tarde");
+              setErrors([
+                {
+                  message: "Hubo un error, intente nuevamente más tarde",
+                  path: ["extra"],
+                },
+              ])
             }
-          } catch (e) {
-            console.log(e);
+          } catch {
+            renderToast("Hubo un error, intente nuevamente más tarde", "warning")
           }
         }
-      } catch (e) {
-        console.log(e);
+      } catch {
+        renderToast("Hubo un error, intente nuevamente más tarde", "warning")
       }
     }
-  };
+  }
 
   const sendValidationEmail = async () => {
     try {
-      let res = await props.validationUserEmail(user.eMail);
+      let res = await props.validationUserEmail(user.eMail)
+      console.log(res)
       if (res.success) {
-        console.log("Te enviamos un mail para que valides tu cuenta");
+        renderToast("Te enviamos un mail para que valides tu cuenta", "success")
       } else {
-       throw res.response
+        throw new Error()
       }
-    } catch (e) {
-      console.log(e);
+    } catch {
+      renderToast("Usuario no válido", "warning")
     }
-  };
+  }
+
   const responseGoogle = async (response) => {
     let user = {
       firstName: response.profileObj.givenName,
@@ -76,38 +109,42 @@ const SignUp = (props) => {
       password: response.profileObj.googleId,
       eMail: response.profileObj.email,
       google: true,
-    };
+    }
     try {
-      let res = await props.registerUser(user);
+      let res = await props.registerUser(user)
       if (!res.success) {
-        console.log("El mail ya está registrado");
-        // throw res.response. Si fuerzo el error me llega desde el back en ingles ver).
+        renderToast("El mail ya está registrado", "warning")
       } else {
         try {
-          console.log("Usuario registrado con éxito");
-          let response = await props.validationUserToken(res.response.token);
+          renderToast("Usuario registrado con éxito", "success")
+          let response = await props.validationUserToken(res.response.token)
           if (response.success)
-            console.log("Te enviamos un mail para que valides tu cuenta");
+            renderToast("Te enviamos un mail para que valides tu cuenta", "success")
           else {
-            console.log("Hubo un error, intente nuevamente más tarde");
+            renderToast("Hubo un error, intente nuevamente más tarde", "warning")
           }
-        } catch (e) {
-          console.log(e);
+        } catch {
+          renderToast("Hubo un error, intente nuevamente más tarde", "warning")
         }
       }
-    } catch (err) {
-      console.log(err);
-      //   console.log("Tenemos un problema, por favor intenta más tarde");
+    } catch {
+      renderToast("Hubo un error, intente nuevamente más tarde", "warning")
     }
-  };
+  }
+
   const renderError = (inputName) => {
-    let errorToRender = errors.find((error) => error.path[0] === inputName);
+    let errorToRender = errors.find((error) => error.path[0] === inputName)
     return (
       <p className="errorInputs" style={{ opacity: errorToRender ? "1" : "0" }}>
         {errorToRender ? errorToRender.message : "&nbsp;"}
       </p>
-    );
-  };
+    )
+  }
+
+  const submitWithEnter = (e) => {
+    e.key === "Enter" && submitUser()
+  }
+
   return (
     <div className="formSign">
       <NavBar />
@@ -118,7 +155,8 @@ const SignUp = (props) => {
             type="text"
             name="firstName"
             placeholder="Nombre"
-            onChange={inputNameHandler}
+            onChange={inputHandler}
+            onKeyDown={submitWithEnter}
           />
           {renderError("firstName")}
         </div>
@@ -127,7 +165,8 @@ const SignUp = (props) => {
             type="text"
             name="lastName"
             placeholder="Apellido"
-            onChange={inputNameHandler}
+            onChange={inputHandler}
+            onKeyDown={submitWithEnter}
           />
           {renderError("lastName")}
         </div>
@@ -136,7 +175,8 @@ const SignUp = (props) => {
             type="email"
             name="eMail"
             placeholder="Email"
-            onChange={inputNameHandler}
+            onChange={inputHandler}
+            onKeyDown={submitWithEnter}
           />
           {renderError("eMail")}
         </div>
@@ -145,7 +185,8 @@ const SignUp = (props) => {
             type="password"
             name="password"
             placeholder="Contraseña"
-            onChange={inputNameHandler}
+            onChange={inputHandler}
+            onKeyDown={submitWithEnter}
           />
           {renderError("password")}
         </div>
@@ -154,10 +195,12 @@ const SignUp = (props) => {
             type="text"
             name="photoURL"
             placeholder="Url de foto"
-            onChange={inputNameHandler}
+            onChange={inputHandler}
+            onKeyDown={submitWithEnter}
           />
           {renderError("photoURL")}
         </div>
+        {renderError("extra")}
       </form>
       <div className="submit">
         <button onClick={submitUser}>Enviar</button>
@@ -174,7 +217,6 @@ const SignUp = (props) => {
         <Link to="/">Volver a Home</Link>
       </div>
       <div className="logGoogle">
-        <button>Inicia sesion con Facebook</button>
         <GoogleLogin
           clientId="449628523643-i6mlv9530rqnelgmf3gribco7nvsi4vr.apps.googleusercontent.com"
           className="botonSub"
@@ -184,25 +226,31 @@ const SignUp = (props) => {
         />
       </div>
       <div className="submit">
-        <p>¿No te llegó el mail de validación?</p>
-        <input
-          type="text"
-          name="eMail"
-          placeholder="Email"
-          onChange={(e) => setUser({ eMail: e.target.value })}
-        />
-        <div className="">
-          <button onClick={sendValidationEmail}>Enviar</button>
-        </div>
+        <Link to="#" onClick={() => setOpenValidation(!openValidation)}>
+          ¿No te llegó el mail de validación? Hacé click aquí
+        </Link>
+        {openValidation && (
+          <>
+            <input
+              type="text"
+              name="eMail"
+              placeholder="Email"
+              onChange={(e) => setUser({ eMail: e.target.value })}
+            />
+            <div className="">
+              <button onClick={sendValidationEmail}>Enviar</button>
+            </div>
+          </>
+        )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const mapDispatchToProps = {
   registerUser: userActions.createUser,
   validationUserToken: userActions.validationUserToken,
   validationUserEmail: userActions.validationUserEmail,
-};
+}
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(null, mapDispatchToProps)(SignUp)

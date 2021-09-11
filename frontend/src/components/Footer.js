@@ -22,13 +22,13 @@ const Footer = () => {
                 </div>
             </div>
             <div className="socialNetworks">
-                <a href="www.facebook.com" target="_blank">
+                <a href="https://www.facebook.com" target="_blank">
                     <img className="rrssImg" src="/assets/rrss_icons/facebook.png" alt="facebook"/>
                 </a>
-                <a href="www.instagram.com" target="_blank">
+                <a href="https://www.instagram.com" target="_blank">
                     <img className="rrssImg" src="/assets/rrss_icons/instagram.png" alt="instagram"/>
                 </a>
-                <a href="www.twitter.com" target="_blank">
+                <a href="https://www.twitter.com" target="_blank">
                     <img className="rrssImg" src="/assets/rrss_icons/twitter.png" alt="twitter"/>
                 </a>
             </div>

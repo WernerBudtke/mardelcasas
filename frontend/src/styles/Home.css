@@ -4,11 +4,12 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .containerHome .containerHero {
     width: 100%;
-    height: 100vh;
-    background-image: url("../assets/backGround375.jpg");
+    height: 115vh;
+    background-image: url("../assets/background375-2.jpg");
+    /* background-image: url("../assets/backGround375.jpg") */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -16,23 +17,23 @@
     align-items: center;
   }
 
-    /* FILTER DE HOME */
+  /* FILTER DE HOME */
   .containerHome .homeFilter {
     margin-top: 7rem;
-    width: 95%;
+    width: 100%;
     height: 16rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
   }
 
   .containerHome .homeFilter > * {
     font-size: 1.2rem;
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content: center;
     padding: 0.5rem;
+    font-weight: 500;
   }
 
   .containerHome .homeFilter .firstRow {
@@ -59,7 +60,7 @@
   .containerHome .homeFilter .firstRow li.active {
     background-color: white;
     color: black;
-    box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.47);
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.47);
   }
 
   /* flechita indicadora */
@@ -76,14 +77,16 @@
   }
 
   .containerHome .homeFilter .secondRow {
-    width: 100%;
+    width: 94%;
     margin-top: 0.6rem;
     display: flex;
     flex-direction: column;
+    align-self: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.7);               /* + + */
+    background-color: rgb(255 255 255 / 55%);
     border-radius: 0.5rem;
-    box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.47);
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.47);
+    backdrop-filter: blur(14.5px);
   }
 
   .containerHome .homeFilter .secondRow div {
@@ -102,7 +105,6 @@
   .containerHome .homeFilter .secondRow select:focus {
     outline: 1px solid transparent;
   }
-
   .containerHome .homeFilter .boxes {
     background-color: transparent;
     width: 100%;
@@ -113,7 +115,7 @@
     padding-left: 1.8rem;
   }
 
-  .containerHome .homeFilter .boxes > div{
+  .containerHome .homeFilter .boxes > div {
     width: 100%;
     display: flex;
     align-items: center;
@@ -143,14 +145,13 @@
     border-radius: 0.3rem;
     cursor: pointer;
   }
-
+  
 }
 
 @media only screen and (min-width: 425px) {
 }
 
 @media only screen and (min-width: 576px) {
-
   .containerHome .homeFilter {
     margin-top: 3rem;
   }
@@ -170,13 +171,12 @@
   .containerHome .homeFilter .secondRow select {
     font-size: 1rem;
   }
-
 }
 
 @media only screen and (min-width: 768px) {
-  
   .containerHome .containerHero {
-    background-image: url("../assets/backGround768.jpg");
+    /* background-image: url("../assets/backGround768.jpg"); */
+    background-image: url("../assets/background2.jpg");
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -269,15 +269,12 @@
     border-radius: 0.3rem;
     cursor: pointer;
   }
-
 }
 
 @media only screen and (min-width: 991px) {
-
 }
 
 @media only screen and (min-width: 1024px) {
-
   .containerHome .containerHero {
     display: flex;
     flex-direction: column;
@@ -286,43 +283,30 @@
   }
 
   .containerHome .homeFilter {
-    width: 95%;
-    height: 12rem;
+    width: 82%;
+    height: 13rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 3rem;
-  }
+}
 
   .containerHome .homeFilter .firstRow {
-    width: 100%;
+    width: 116.5%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
-  .containerHome .homeFilter .firstRow ul {
-    list-style-type: none;
-    width: 35%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 2rem;
-  }
 
   .containerHome .homeFilter .firstRow li.active::before {
     top: 2.7rem;
   }
 
-  .containerHome .homeFilter .secondRow {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: white;
-    border-radius: 0.5rem;
+  .containerHome .homeFilter .firstRow li {
+    padding: 0.5rem;
+    cursor: pointer;
     font-size: 1.5rem;
-    margin-top: 1rem;
-  }
+}
 
   .containerHome .homeFilter .secondRow select {
     font-size: 1.4rem;
@@ -356,9 +340,12 @@
     border: none;
     border-radius: 0.3rem;
     cursor: pointer;
-    box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.25);
   }
-
+  .containerHome .containerHero {
+    width: 100%;
+    height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
