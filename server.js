@@ -79,8 +79,6 @@ io.on("connection", (socket) => {
         socket.emit("userConnected", usersConnected)
     }else{
         // console.log(socket.id)
-        // console.log(verifiedUser._doc.admin)
-        
         let newUser = {eMail: verifiedUser._doc.eMail, id: socket.id, firstName: verifiedUser._doc.firstName}
         // console.log(newUser.eMail)
         usersConnected.forEach(user => {
