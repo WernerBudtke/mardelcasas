@@ -28,11 +28,11 @@
     background-color: rgba(255, 255, 255, 0.884);
     border-radius: 0.3rem;
     position: absolute;
-    top: 3.8rem;
+    top: 3.7rem;
+    right: .4rem;
     z-index: 2;
     backdrop-filter: blur(14.5px);
     box-shadow: 6px 2px 5px #2e302e7a;
-    margin-left: -2rem;
   }
 
   .navBar .userMenu > a {
@@ -43,6 +43,16 @@
     /* border-bottom: 0.1px solid rgb(46 110 139 / 26%); */
     text-align: start;
     text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .navBar .userMenu > a > svg {
+    height: 1rem;
+    width: 1rem;
+    margin: 0;
+    margin-right: 1rem;
   }
 
   .navBar .userMenu > a:last-child {
@@ -79,6 +89,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .navBar .userMenu {
+    margin-left: -5rem;
+  }
 }
 
 @media only screen and (min-width: 991px) {
@@ -88,6 +101,7 @@
   .navBar .userMenu {
     width: 13rem;
     margin-top: 1.2rem;
+    margin-left: -6rem;
   }
 }
 

@@ -7,7 +7,16 @@ form h1 {
   color: rgb(243, 243, 243);
   padding: 1rem;
 }
-
+.labelCheckbox {
+  cursor: pointer !important;
+  padding: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.308);
+  margin-left: 1rem;
+}
+div select {
+  padding: 0.2rem;
+  margin-bottom: 0.2rem;
+}
 @media only screen and (min-width: 375px) {
   .formSign {
     min-height: 100vh;
@@ -16,11 +25,9 @@ form h1 {
     justify-content: center;
     align-items: center;
     background-image: url("../assets/12.jpg");
-    /* background-image: url("../assets/17.jpg"); */
     -webkit-backdrop-filter: blur(14.5px);
     backdrop-filter: blur(50rem);
-    /* background-position: 10% 30%; */
-    background-position: 10% 23%;
+    background-position: 10% 3%;
     background-size: cover;
   }
   .formProperties {
@@ -35,12 +42,16 @@ form h1 {
     -webkit-backdrop-filter: blur(14.5px);
     backdrop-filter: blur(50rem);
     background-position: 10% 23%;
-    /* background-size: cover; */
   }
   .formProperties div input[type="checkbox"],
   .formProperties div input[type="radio"] {
     width: 2rem !important;
     box-shadow: none !important ;
+  }
+  .formProperties div input[name="isUSD"],
+  input[name="isHouse"] {
+    visibility: hidden;
+    width: 8rem;
   }
   .formSign form,
   .formSign .submit,
@@ -62,12 +73,23 @@ form h1 {
     align-items: center;
     flex-direction: column;
   }
+  .submit >* {
+    backdrop-filter: blur(14.5px);
+    }
+    .submit a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      text-shadow: 0 0 black;
+    }
+    .submit a:hover {
+      border-bottom: .5px solid rgb(0, 0, 0);
+     }
 
   form div input,
   .formSign .submit button,
   .formSign .logGoogle button,
   .formSign div input,
-  .formProperties div input {
+  .formProperties div input, .button {
     width: 21rem;
     padding: 0.5rem;
     outline: none;
@@ -118,14 +140,62 @@ form h1 {
 @media only screen and (min-width: 576px) {
 }
 @media only screen and (min-width: 768px) {
-  /* form div input,
-  .formSign .submit button {
-    width: 30rem;
-  } */
   .formSign .logGoogle button,
   .formSign .logGoogle .buttonText {
     width: 14.8rem;
   }
+  .formSign .submit,
+  .formSign .logGoogle {
+    margin-left: 1rem;
+  }
+  .formProperties form {
+    background-color: rgba(95, 95, 95, 0.185);
+    width: 90%;
+    border-radius: 0.8rem;
+    padding: .2rem;
+  }
+
+  form div {
+    padding-left: 1rem;
+    margin: 0.8rem 0;
+  }
+  form input.price {
+    width: 8rem !important;
+  }
+  div .rental {
+    text-align: center;
+  }
+  div .rental label {
+    width: 2rem;
+  }
+  .logGoogle span {
+    font-size: 1rem!important;
+    color: black;
+  }
+  
+  input[name="rentDuration"],
+  input[name="price"],
+  input[name="numberOfBathrooms"],
+  input[name="numberOfBedrooms"],
+  input[name="numberOfRooms"],
+  input[name="roofedArea"],
+  input[name="totalArea"] {
+    width: 6rem !important;
+  }
+  .typeHouse h4 {
+    display: inline-block;
+  }
+  div textarea {
+    width: 98%;
+    border: none;
+    resize: none;
+}
+
+.formSign .form {
+  border-radius: 1rem;
+  margin-top: .5rem;
+  background-color: rgba(255, 255, 255, 0.212);
+}
 }
 @media only screen and (min-width: 991px) {
   form div input,
@@ -134,9 +204,20 @@ form h1 {
   .formSign div input {
     width: 39rem;
   }
+  
 }
 
 @media only screen and (min-width: 1024px) {
+    .formProperties form {
+        width: 55%;
+        color: black;
+        padding: 1rem;
+        box-shadow: 3px 3px 10px #40404075;
+    }
+    div textarea {
+        width: 100%;
+        border: none;
+    }
 }
 
 @media only screen and (min-width: 1440px) {

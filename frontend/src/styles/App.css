@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&family=Lobster&family=Urbanist&display=swap");
+
 html * {
   margin: 0;
   padding: 0;
@@ -31,15 +32,22 @@ html * {
   header > div > .goBackPH {
     width: 2rem;
     height: 2rem;
-    margin-left: 1rem;
+    margin: 0 2.1rem;
   }
 
   header > div a svg {
+    color: grey;
     margin: 0 2.1rem;
   }
 
   header div a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  header div a img{
+    display: none;
   }
 
   header div a h1 {
@@ -48,12 +56,21 @@ html * {
     cursor: pointer;
   }
 
-  header #admin {
-    display: block;
-    background-color: teal;
-    color: whitesmoke;
-    padding: 1rem;
-    border-radius: 0.8rem;
+  header #admin,
+  a#adminForm {
+    font-size: 1.2rem;
+    display: none;
+    color: hsl(0, 0%, 55%);
+    padding: 0.2rem 1rem;
+    text-decoration: none;
+  }
+  header #admin:hover,
+  header a#adminForm:hover {
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.253);
+  }
+
+  header>a.active {
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.253);
   }
 
   .swiperBox {
@@ -95,6 +112,26 @@ html * {
   html {
     font-size: 2vw;
   }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #8d8d8d;
+    box-shadow: 1px 1px 10px black;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #792c00;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #792c00;
+  }
   header div a h1 {
     color: rgb(129, 129, 129);
     font-size: 1.5rem;
@@ -110,9 +147,14 @@ html * {
     z-index: 1;
     box-shadow: 1px 1px 10px #0404045e;
   }
-  .containerHome .homeFilter .firstRow {
-    width: 108% !important;
+
+  header div a img{
+    height: 7rem;
+    display: block;
   }
+  /* .containerHome .homeFilter .firstRow {
+    width: 108% !important;
+  } */
   /* .containerHome .containerHero {
     width: 105vw;
   } */
@@ -125,6 +167,10 @@ html * {
   /* header div:first-child {
     margin: 1rem 3.2rem;
   } */
+  header #admin,
+  a#adminForm {
+    display: block;
+  }
   header {
     background-color: #ffffff;
     width: 100%;

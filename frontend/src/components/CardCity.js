@@ -1,4 +1,4 @@
-import "../styles/CardCity.css" //css contiene main y cardCity
+import "../styles/CardCity2.css" //css contiene main y cardCity
 import React from "react"
 import { useEffect, useState } from "react"
 import { connect } from "react-redux"

@@ -1,3 +1,28 @@
+.supportChatContainer {
+  min-height: 100vh;
+  /* width: 100vw; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: rgb(179, 180, 178);
+  /* background: linear-gradient(
+    90deg, rgb(228 248 255) 0%, rgb(142 218 247) 100%); */
+    background-image: url("../assets/12.jpg");
+    background-size: cover;
+    background-position: 100% 5%;
+}
+
+.supportChatContainer>div{
+  height: 86vh;
+  width: 47%;
+}
+
+.supportChatContainer header {
+  width: 100%;
+  margin-top: -1rem;
+}
+
 .errorBackend {
   position: absolute;
   width: 100%;
@@ -12,132 +37,193 @@
   opacity: 0.9;
 }
 
-.supportChatContainer h4 {
-  font-size: 1.5rem;
-}
-.supportChatContainer {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  color: white;
-  background-color: rgb(212, 212, 212);
-}
-.sendContainerChat {
-  width: 40%;
-  min-height: 90%;
+.chatBoxHandler {
   display: flex;
   flex-direction: column;
+  width: 40%;
+  height: 90vh;
+  margin: 0 1rem;
+  order: 0;
+  justify-content: space-between;
+  border-radius: 2rem;
+  align-items: center;
+  backdrop-filter: blur(14.5px);
+  background-color: rgb(255 255 255 / 31%);
+  box-shadow: 0.5px 0.5px 9px #00000026;
 }
-.sendContainerChat > * {
+
+.supportChatContainer .chatBoxHandler .infoChat{
+  display: flex;
+  justify-content: flex-start;
+  order: 1;
+  height: 30%;
+  width: 100%;
+  background-color: white;
+  /* margin-left: 6rem; */
+  overflow: hidden;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+/* .supportChatContainer .chatBoxHandler .infoChat h4 {
+  font-size: 1.5rem;
+  left: 10rem;
+  position: absolute;
+  color: rgb(26, 26, 56);
+} */
+
+.supportChatContainer .chatBoxHandler .infoChat img {
+  height: 10rem;
+  margin-right: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+.supportChatContainer .chatBoxHandler .infoChat .helpedUsers{
+  min-width: 15rem;
+  align-self: center;
+}
+
+.supportChatContainer .chatBoxHandler .infoChat .helpedUsers h2{
+  cursor: pointer;
+}
+
+.supportChatContainer .chatBoxHandler .infoChat .helpedUsers h2:first-child{
+  color: rgb(26, 26, 56);
+  text-decoration: underline; 
+  cursor: text;
+}
+
+/*A quien estoy ayudando*/
+.chatBoxHandler .whoImHelpingContainer {
+  order: 2;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  box-shadow: 0.5px 0.5px 9px #00000026;
+  gap: .2rem;
+}
+
+.helpContainerHandler .whoImHelpingContainer {
+  border-radius: 2rem;
+}
+
+div .sendContainerChat {
+  width: 100%;
+  display: flex;
+  backdrop-filter: blur(14.5px);  
+  /* flex-direction: column; */
+  justify-content: space-between;
+}
+
+div .sendContainerChat > * {
   padding: 1rem;
   width: 100%;
   margin: 0.3rem 0;
-}
-.chatBoxHandler {
-  width: 58%;
-  margin: 0 1rem;
-  order: 0;
-  background: linear-gradient(
-    90deg,
-    rgb(54, 54, 54) 0%,
-    rgb(68, 68, 68) 0%,
-    rgb(54, 54, 54) 100%
-  );
-  border-radius: 2rem;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 96vh;
-  box-shadow: 0.5px 0.5px 4px #00000082;
+  border-radius: 1rem;
+  height: 29vh !important;
 }
 
+/*Clientes que pidieron ayuda*/
 .peopleToHelpContainer {
   order: 1;
   padding: 2rem;
-  height: 31.5vh;
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-  background: linear-gradient(
-    90deg,
-    rgb(54, 54, 54) 0%,
-    rgb(68, 68, 68) 0%,
-    rgb(54, 54, 54) 100%
-  );
+  backdrop-filter: blur(14.5px);
+  background-color: rgba(255, 255, 255, 0.918);
+  box-shadow: 0.5px 0.5px 9px #00000026;
 }
+
+.peopleToHelpContainer p {
+  cursor: pointer;
+}
+
 /* 8f3900 */
 .handleWhoToHelpContainer {
+  color: white;
   order: 2;
-  height: 31vh;
-  padding: 2rem;
-  background: linear-gradient(
-    90deg,
-    rgb(54, 54, 54) 0%,
-    rgb(68, 68, 68) 0%,
-    rgb(54, 54, 54) 100%
-  );
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
+  background-color: rgb(255 255 255 / 19%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.whoImHelpingContainer:first-child {
-  padding: 2rem;
-  order: 3;
-  height: 31vh;
-  background: linear-gradient(
-    90deg,
-    rgb(54, 54, 54) 0%,
-    rgb(68, 68, 68) 0%,
-    rgb(54, 54, 54) 100%
-  );
-  border-radius: 0;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-}
-.whoImHelpingContainer {
-  padding: 2rem;
-  order: 3;
-  height: 31vh;
-  background: linear-gradient(
-    90deg,
-    rgb(54, 54, 54) 0%,
-    rgb(68, 68, 68) 0%,
-    rgb(54, 54, 54) 100%
-  );
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
+
+div .whoImHelpingContainer {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  backdrop-filter: blur(14.5px);
+  background-color: rgba(255, 255, 255, 0.801);
+  box-shadow: 0.5px 0.5px 9px #00000026;
 }
 
-.supportChatContainer h4:nth-child(2) {
+.supportChatContainer .helpContainerHandler .whoImHelpingContainer>div {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.whoImHelpingContainer div .userOnLine{
+  /* height: 10rem; */
+  /* width: 15rem; */
+  backdrop-filter: blur(14.5px);
+  background-color: rgba(0, 0, 0, 0.692);
+  border-radius: .5rem;
+  text-align: center;
+  margin: 1rem;
+  padding: .5rem;
+}
+
+.whoImHelpingContainer div .userOnLine p:last-child{
+  cursor: pointer;
+}
+
+.supportChatContainer h4 {
   padding: 0.5rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: #0000007d;
+  order: 1;
 }
+
 .chatBox {
-  width: 58vw;
-  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
   height: 22.2rem;
   overflow-x: hidden;
-  width: 55vw;
-  border: 1px solid #ffffff21;
+  border: 1px solid #5c57902b;
+  order: 4;
+}
+.chatBox h2 {
+  box-shadow: 0.5px 0.5px 9px #00000026;
+  padding: 1rem;
 }
 .chatBox p {
-  background-color: rgba(204, 199, 199, 0.329);
+  text-align: start;
+  background-color: rgb(255 255 255 / 93%);
   padding: 1rem;
   margin: 2rem;
   width: 90%;
+  color: #545454;
   overflow-x: auto;
   word-break: break-all;
+  box-shadow: 0.5px 0.5px 4px #00000082;
 }
+
 .inputToSend {
-  width: 93%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  order: 5;
 }
 .inputToSend input,
 .handleWhoToHelpContainer input {
-  width: 90% !important;
+  width: 90%;
   padding: 1.1rem;
   border: none;
   outline: none;
@@ -148,7 +234,7 @@
 .handleWhoToHelpContainer button {
   border: none;
   background-color: transparent;
-  color: white;
+  color: rgb(66, 65, 65);
   padding-left: 0.5rem;
   cursor: pointer !important;
 }
@@ -162,3 +248,9 @@
   font-size: 1rem;
   transition: 0.2s;
 }
+
+.supportChatContainer>.whoImHelpingContainer {
+  overflow-y: scroll;
+  height: 20rem;
+}
+

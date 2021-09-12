@@ -5,9 +5,29 @@
     width: 80%;
     height: 200px;
     border-radius: 0.5rem;
-}
-
-.propertiesListNoHousesDiv .imageDiv {
+  }
+  .containerPropertiesList .sortList {
+    height: 9vh;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .containerPropertiesList .sortList select {
+    width: 40%;
+    height: 7vh;
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    margin-top: 0.3rem;
+    margin-right: 1.2rem;
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+  }
+  
+  .containerPropertiesList .sortList select:focus {
+    outline: 1px solid transparent;
+  }
+  
+  .propertiesListNoHousesDiv .imageDiv {
     position: absolute;
     background-position: center;
     background-size: cover;
@@ -15,42 +35,139 @@
     height: 200px;
     border-radius: 0.5rem;
     box-shadow: 0.5px 0.5px 8px #0f0f0f;
-}
+  }
 
-/* .propertiesListNoHousesDiv .imageDiv:before {
-content: "";
-position: absolute;
-background-color: #020202af;
-opacity: 0.5;
-width: 80%;
-height: 200px;
-border-radius: 0.5rem;
-overflow: hidden;
-} */
+  .propertiesListNoHousesDiv .noHouses {
+    background-image: url("../assets/noHouses.jpeg");
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
 
-.propertiesListNoHousesDiv p {
+  .propertiesListNoHousesDiv .noHouses p {
+    color: red;
+    position: absolute;
+    top: 48%;
+    left: 12%;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px gray;
+  }
+  
+  /* .propertiesListNoHousesDiv .imageDiv:before {
+  content: "";
+  position: absolute;
+  background-color: #020202af;
+  opacity: 0.5;
+  width: 80%;
+  height: 200px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  } */
+  
+  .propertiesListNoHousesDiv p {
     /* color: white; */
     z-index: 20;
-}
+  }
+  
+  @media only screen and (min-width: 425px) {
+  }
+  
+  @media only screen and (min-width: 576px) {
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .containerPropertiesList .sortList {
+      height: 9vh;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    .containerPropertiesList .sortList select {
+      width: 30%;
+      font-size: 1.2rem;
+      height: 6vh;
+      padding: 0 1rem;
+      margin-right: 1.6rem;
+      border: 1px solid gray;
+      border-radius: 0.3rem;
+      box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+    }
 
-@media only screen and (min-width: 425px) {
+    .propertiesListNoHousesDiv .noHouses {
+      width: 70%;
+      height: 100%;
+    }
 
-}
-
-@media only screen and (min-width: 576px) {
-}
-
-@media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 991px) {
-}
-
-@media only screen and (min-width: 1024px) {
-}
-
-@media only screen and (min-width: 1440px) {
-}
-
-@media only screen and (min-width: 2560px) {
-}
+    .propertiesListNoHousesDiv .noHouses p{
+      left: 20%;
+    }
+  }
+  
+  @media only screen and (min-width: 991px) {
+    .containerPropertiesList .sortList {
+      height: 9vh;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    .containerPropertiesList .sortList select {
+      width: 30%;
+      font-size: 1.2rem;
+      height: 6vh;
+      padding: 0 1rem;
+      margin-right: 1.6rem;
+      border: 1px solid gray;
+      border-radius: 0.3rem;
+      box-shadow: 10px 10px 31px -1px rgba(0, 0, 0, 0.1);
+    }
+    .containerPropertiesList .sortList {
+      background-color: transparent;
+    }
+  
+    .containerPropertiesList .sortList {
+      height: 8vh;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      box-shadow: 0px 22px 12px -17px rgb(0 0 0 / 12%);
+    }
+  
+    .containerPropertiesList .sortList select {
+      width: 19%;
+      font-size: 1.6rem;
+      height: 5vh;
+      padding: 0 1rem;
+    }
+    .propertiesListNoHousesDiv .noHouses {
+      width: 70%;
+      height: 100%;
+      background-position-y: 25%;
+      background-position-x: center;
+      background-size: 80%;
+      background-repeat: no-repeat;
+    }
+    
+    .propertiesListNoHousesDiv .noHouses p {
+      left: 21%;
+      font-size: 2rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+  }
+  
+  @media only screen and (min-width: 1440px) {
+  }
+  
+  @media only screen and (min-width: 2560px) {
+  }
+  

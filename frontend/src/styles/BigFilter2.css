@@ -297,8 +297,9 @@
     }
 
     .bigFilter .bigFilterBox div .expandWidth{
-        max-width: 100%;
-        margin-left: -1rem;        
+        width: 100%;
+        margin-right: 5rem;
+        width: 80rem;   
     }
     
 } 

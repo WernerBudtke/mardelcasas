@@ -61,7 +61,7 @@ const propertiesActions = {
   postNewProperty: (newProperty, token) =>{
     return async () => {
       try{
-        let res = await axios.post("https://mardelcasas.herokuapp.com/api/property", {...newProperty},{
+        let res = await axios.post("https://mardelcasas.herokuapp.com/property", {...newProperty},{
           headers:{
             Authorization: 'Bearer ' + token
           }

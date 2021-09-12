@@ -1,0 +1,148 @@
+@media only screen and (min-width: 375px) {
+  main {
+    padding-bottom: 2rem;
+    backdrop-filter: blur(14.5px);
+    background-position: 100% -111%;
+    background-size: cover;
+    height: 150vh;
+    flex: 1;
+  }
+  main .mainTitle {
+    text-align: center;
+    color: rgb(119, 119, 119);
+    padding: 2rem 0;
+    border-top: 20px solid rgb(133, 133, 133);
+  }
+
+  .mainCityCarBox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .divCard a {
+    text-decoration: none;
+  }
+
+  .divCard,
+  .divCard .cardCity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divCard .cardCity {
+    width: 20rem;
+    height: 18rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0.5px 0.5px 8px #0f0f0f69;
+  }
+
+  .divCard .cardCity > * {
+    color: rgb(251 251 251);
+    z-index: 1;
+  }
+
+  .divCard .cardCity:hover {
+    transform: scale(1.03);
+    overflow: hidden;
+    background-color: #0000002c;
+    opacity: 0.9;
+    transition: transform 0.5s;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+}
+@media only screen and (min-width: 576px) {
+}
+@media only screen and (min-width: 768px) {
+  /* main {
+    width: 100vw;
+    height: 93vh;
+  } */
+  .mainCityCarBox {
+    width: 70%;
+    height: 77%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .divCard .cardCity {
+    width: 16rem;
+    height: 11rem;
+    margin: 0.4rem;
+  }
+
+  .divCard .cardCity > * {
+    font-size: 1rem !important;
+  }
+}
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    /* width: 100vw; */
+    height: 90vh;
+    /* background-image: url("../assets/16.jpg");
+    backdrop-filter: blur(14.5px);
+    background-position: 100% 70%;
+    background-size: cover; */
+  }
+  .mainCityCarBox {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+  }
+  /* width */
+  .mainCityCarBox::-webkit-scrollbar {
+    height: 0.8rem;
+  }
+
+  /* Track */
+  .mainCityCarBox::-webkit-scrollbar-track {
+    background: #8d8d8d;
+    box-shadow: 1px 1px 10px black;
+  }
+
+  /* Handle */
+  .mainCityCarBox::-webkit-scrollbar-thumb {
+    background: #792c00;
+  }
+
+  /* Handle on hover */
+  .mainCityCarBox::-webkit-scrollbar-thumb:hover {
+    background: #792c00;
+  }
+  .divCard .cardCity {
+    width: 35rem;
+    height: 25rem;
+    gap: 1rem;
+    margin-left: 1rem !important;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  }
+  .divCard .cardCity > * {
+    font-size: 2rem !important;
+  }
+  /* .divCard .cardCity:before {
+    width: 35rem;
+    height: 25rem;
+    margin: 1rem;
+  } */
+}
+
+@media only screen and (min-width: 1440px) {
+}
+
+@media only screen and (min-width: 2560px) {
+}

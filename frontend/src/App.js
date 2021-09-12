@@ -24,8 +24,8 @@ function App (props) {
         <Route path="/propiedad/:id" component={Property}/>
         {!token && <Route path="/registrarse" component={SignUp} />}
         {!token && <Route path="/iniciar-sesion" component={SignIn} />}
-        {admin && <Route path="/admin" component={Admin}/>}
-        <Route path="/addprop" component={AdminForm}/>
+        {admin && <Route path="/chat-soporte" component={Admin}/>}
+        {admin && <Route path="/formulario-propiedades" component={AdminForm}/>}
         <Route path="/usuario/confirmacion-deshabilitar-cuenta/:id" component={BanAnAccount} />
         <Redirect to="/" />
       </Switch>

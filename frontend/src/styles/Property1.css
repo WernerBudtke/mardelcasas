@@ -1,0 +1,327 @@
+.containerProperty{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .propertyMain {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10%;
+  }
+  
+  .propertyMain .propertyErrorConnection,
+  .propertyMain .propertyLoading {
+    color: #2b302a;
+    font-size: 1.5rem;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .propertyMain .houseStyleH1 {
+    color: #2b302a;
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px 0px;
+  }
+  
+  .propertyMain .carrouselSection {
+    width: 100%;
+    margin: 10px 0px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* .propertyMain .dataSection .priceP { */
+  .propertyMain .carrouselSection .priceP {
+    width: 6rem;
+    text-align: center;
+    background: #3d8e00;
+    color: #ead7db;
+    padding: 0.5rem;
+    flex: 1 1;
+    font-size: 0.7rem;
+    position: absolute;
+    z-index: 2;
+    left: 68%;
+    top: 5%;
+  }
+  
+  .propertyMain .dataSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0px;
+    padding: 0.5rem;
+    box-shadow: 0.5px 0.5px 4px #48484882;
+  }
+  
+  .propertyMain .dataSection .priceAndAddressArticle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  /*.propertyMain .dataSection .priceP {
+    transform: rotate(45deg);
+    background: green;
+    color: #ead7db;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    flex: 1;
+  }*/
+  
+  .propertyMain .dataSection .addressDiv {
+    font-size: 0.9rem;
+    align-self: flex-start;
+    flex: 3;
+  }
+  
+  .propertyMain .dataSection article svg.wishListBtn {
+    color: orange;
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+  }
+  
+  .propertyMain .dataSection article svg.reject {
+    cursor: no-drop;
+  }
+  
+  .propertyMain .dataSection .addressDiv h3 {
+    margin: 5px 0px;
+  }
+  
+  .propertyMain .dataSection .typeOfArticle {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .propertyMain .dataSection .areaAndRoomsArticle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  
+  .propertyMain .dataSection .extrasArticle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 0.5px solid #dfdfdf;
+  }
+  
+  .propertyMain .dataSection .extrasArticle p {
+    margin: 10px;
+  }
+  
+  .propertyMain .videoSection {
+    width: 100%;
+    margin: 10px 0px 20px 0px;
+  }
+  
+  .propertyMain .videoSection .videoArticle,
+  .propertyMain .carrouselSection article {
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+  }
+  
+  .propertyMain .videoSection .videoArticle iframe,
+  .propertyMain .carrouselSection article .swiperBox {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    
+}
+
+    div#sectionsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+  @media only screen and (min-width: 425px) {
+    .propertyMain .houseStyleH1 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media only screen and (min-width: 576px) {
+    .propertyMain {
+      padding: 0px 15%;
+    }
+  
+    .propertyMain .houseStyleH1 {
+      font-size: 0.8rem;
+    }
+  
+    .propertyMain .carrouselSection .priceP {
+      width: 6rem;
+      top: 7%;
+      left: 64%;
+      font-size: 0.7rem;
+    }
+  
+    .propertyMain .dataSection .addressDiv {
+      font-size: 0.7rem;
+    }
+  
+    .propertyMain .dataSection .priceP {
+      font-size: 0.7rem;
+    }
+  
+    .propertyMain .dataSection .areaAndRoomsArticle {
+      font-size: 1rem;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+      .propertyMain .houseStyleH1 {
+        font-size: 1.5rem;
+      }
+      
+      div#sectionsContainer {
+          align-items: center;
+      }
+
+    
+  
+    .propertyMain .carrouselSection .priceP {
+      left: 75%;
+      top: 5%;
+      font-size: 0.7rem;
+    }
+  
+    .propertyMain .dataSection{
+        width: 90%;        
+    }
+  
+    .propertyMain .dataSection .addressDiv {
+      font-size: 0.6rem;
+    }
+  
+    .propertyMain .dataSection .priceP {
+      font-size: 0.7rem;
+      padding: 5px;
+    }
+  
+    .propertyMain .dataSection .areaAndRoomsArticle {
+      display: block;
+      align-items: center;
+      font-size: 1.1rem;
+      width: 100%;
+    }
+
+    
+  }
+  
+  @media only screen and (min-width: 991px) {
+    /* .propertyMain {
+      height: 100%;
+      background: #fff;
+    } */
+    .propertyMain {
+        padding: 0px 5%;
+        width: 100%;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+      }
+      
+      div#sectionsContainer {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+      }
+  
+      .propertyMain .carrouselSection {
+        width: 50vw;
+        height: 100%;
+        align-self: center;
+        margin-right: 1rem;
+      }
+
+      div#sectionsContainer .dataSection {
+          width: 40%;
+      }
+    
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .propertyMain {
+      min-height: 80vh !important;
+    }
+  
+    .propertyMain .houseStyleH1 {
+      font-size: 2.5rem;
+    }
+  
+    .propertyMain .carrouselSection {
+      width: 60%;
+    }
+  
+    .propertyMain .carrouselSection .priceP {
+      width: 12rem;
+      font-size: 1.6rem;
+      left: 76%;
+      top: 6%;
+    }
+  
+    .propertyMain .dataSection .addressDiv {
+      font-size: 1.4rem;
+    }
+  
+    .propertyMain .dataSection .priceP {
+      font-size: 1.3rem;
+      margin-top: 25px;
+    }
+  
+    .propertyMain .dataSection .typeOfArticle {
+      font-size: 2rem;
+    }
+  
+    .propertyMain .dataSection .areaAndRoomsArticle {
+      font-size: 1.7rem;
+    }
+  
+    .propertyMain .dataSection .extrasArticle p {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media only screen and (min-width: 1440px) {
+    .propertyMain .dataSection .priceP {
+      padding: 12px;
+      margin-top: 40px;
+    }
+  
+    .propertyMain .dataSection .extrasArticle p {
+      margin: 20px;
+    }
+  }
+  
+  @media only screen and (min-width: 2560px) {
+  }
+  
+  /* 
+  #2B302A
+  #EAD7DB
+  #493737
+  #986F6D
+  #D2A19C
+  */
+  

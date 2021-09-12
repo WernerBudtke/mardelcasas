@@ -21,7 +21,7 @@ const UserChat = (props) =>{
             socket && socket.disconnect()
             return false
         }else{
-            setSocket(io('https://mardelcasas.herokuapp.com/', {
+            setSocket(io('https://mardelcasas.herokuapp.com', {
                 auth:{
                     token: token
                 }
@@ -51,6 +51,7 @@ const UserChat = (props) =>{
             setMessages(messages => [...messages, message])
             // console.log("Despues de pushearlo", messages)
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[socket])
 
     if(socket){
@@ -110,6 +111,7 @@ const UserChat = (props) =>{
             return false
         }
         scrollToBottom()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[messages, chatSwap])
 
     if(!token){

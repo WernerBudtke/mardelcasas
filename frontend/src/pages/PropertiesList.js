@@ -9,25 +9,16 @@ import userActions from "../redux/action/userActions"
 import citiesActions from "../redux/action/citiesActions"
 import CardProperty from "../components/CardProperty"
 import Swal from "sweetalert2"
+import Preloader from "../components/Preloader"
 
 const PropertiesList = (props) => {
     const {filterObj, getCities, getPropertiesFiltered, cities, properties, token} = props
     const [sortedProperties, setSortedProperties] = useState(properties)
     const [renderSort, setRenderSort] = useState(false)
     const [subscription, setSubscription] = useState("")
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        // if (properties.length === 0) {
-        //     getPropertiesFiltered({})
-        //     .then(res => {
-        //         if(!res.success){
-        //             throw new Error(res.error)
-        //         }
-        //         console.log(res.response)
-        //     })
-        //     .catch(err => console.log(err))
-        //     console.log("Properties List se monto y se cargo prop")
-        // }
         if (cities === 0) {
             getCities()
             .then(res => {
@@ -39,6 +30,8 @@ const PropertiesList = (props) => {
             renderToast(err, "warning")
             })
         }
+        setLoading(false)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(()=>{
@@ -119,13 +112,14 @@ const PropertiesList = (props) => {
             <div className="propertiesListNoHousesDiv">
                 {/* <div className="imageDiv" style={{backgroundImage: "url('./assets/noHouses.jpg')"}}>
                 </div> */}
-                <p>No hay resultados para tu busqueda</p>
                 {!token ?
-                <p>test</p> :
+                <div className="noHouses">
+                    <p>No hay resultados para tu búsqueda</p>                     
+                </div> :
                 subscription === "" ?
                 <div>
-                    <p>Suscribete para recibir un aviso cuando haya resultados nuevos</p>
-                    <button onClick={subscribeEmail}>Suscribete</button>
+                    <p>Suscríbete para recibir un aviso cuando haya resultados nuevos</p>
+                    <button onClick={subscribeEmail}>Suscríbete</button>
                 </div> :
                 <p>{subscription}</p>
                 }
@@ -148,7 +142,8 @@ const PropertiesList = (props) => {
                     <option value="maxArea">Mayor superficie</option>
                 </select>
             </div>
-            {properties.length !== 0 ?
+            {loading ? <Preloader /> :
+            properties.length !== 0 ?
                 <div className="propertiesCardList">
                     {properties.map(property =><CardProperty key={property._id} property={property}/>)}
                 </div> :

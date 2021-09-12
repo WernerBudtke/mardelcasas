@@ -112,6 +112,7 @@ const FiltersSelected = (props) => {
             // }
         })
         setFiltersSelected(arrayAux)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [formFilter])
 
     const renderToast = (message, type) => {

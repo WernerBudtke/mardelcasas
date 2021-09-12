@@ -1,21 +1,68 @@
-.banAnAccount {
-    background-color: gray;
-    width: 100vw;
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+@media only screen and (min-width: 375px) {
+
+    .banAnAccount {
+        width: 100vw;
+        height: 100vh; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background-image: url("../assets/12.jpg");
+        background-position: 10% 23%;
+        background-size: cover;
+    }
+
+    .banAnAccount .banAnAccountText {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* .banAnAccount > h3 {
+    
+    } */
+
+    .banAnAccount .banAnAccountButton {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .banAnAccount .banAnAccountButton > button {
+        padding: 1vh 2vw;
+        width: 35vw;
+        padding: 0.5rem;
+        outline: none;
+        border: 1px solid rgba(128, 128, 128, 0.164);
+        margin: 0.2rem;
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+        box-shadow: 6px -2px 5px #9393937a;
+        backdrop-filter: blur(14.5px);
+        font-size: 0.8rem;
+    }
+
+    .banAnAccount .banAnAccountMessage {
+        height: 20vh;
+        width: 80%;
+        text-align: center;
+    }
+
+    .banAnAccount .banAnAccountMessage div h3 {
+        margin-bottom: 1rem;
+    }
 }
 
-.banAnAccount .banAnAccountButton {
-    width: 20vw;
-    display: flex;
-    justify-content: space-between;
-}
+@media only screen and (min-width: 768px) {
 
-.banAnAccount .banAnAccountButton > button {
-    padding: 1vh 2vw;
+    .banAnAccount .banAnAccountButton {
+        width: 30%;
+    }
 
 }
-

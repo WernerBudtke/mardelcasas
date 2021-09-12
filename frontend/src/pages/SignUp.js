@@ -218,7 +218,7 @@ const SignUp = (props) => {
       </div>
       <div className="logGoogle">
         <GoogleLogin
-          clientId="449628523643-i6mlv9530rqnelgmf3gribco7nvsi4vr.apps.googleusercontent.com"
+          clientId="405270090362-9r1913fotsrlhral010g4f60d5ra334k.apps.googleusercontent.com"
           className="botonSub"
           buttonText="Registrarse con Google"
           onSuccess={responseGoogle}

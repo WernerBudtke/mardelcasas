@@ -24,6 +24,7 @@ const WishList = (props) => {
             }
         }
         getWishList()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const renderToast = (message, type) => {
@@ -51,7 +52,8 @@ const WishList = (props) => {
                 <div onClick={() => props.closeWishList()} className="closeButton"><BsX /></div>                
             </div>
             <div className="wishListBox">
-            {wishList.map((wish, index) => (
+            {wishList.length < 1 ? <div className="wishListMessage"><h3>* No tienes ninguna propiedad guardada en tus favoritas *</h3></div> :
+                wishList.map((wish, index) => (
                 <div className="wishListItem"><CardProperty property={wish} key={index}/></div>
             ))}
             </div>

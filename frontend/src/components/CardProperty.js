@@ -9,7 +9,7 @@ const CardProperty = (props) => {
     const property = props.property
     // console.log(property)
     console.log(props)
-    const currency = property.isUSD ? "USD" : "$"
+    const currency = property.isUSD ? "U$D" : "$"
     const contract = property.forSale ? "Propiedad a la venta" : "Propiedad en alquiler"
     const type = property.isHouse ? "Casa" : "Departamento"
     return(

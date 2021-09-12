@@ -34,17 +34,18 @@ const BanAnAccount = (props) => {
 
     return (
         <div className="banAnAccount">
-            <h3>Etás seguro que quieres deshabilitar tu cuenta?</h3>
+            <div className="banAnAccountText">
+                <h3>Estás seguro que quieres deshabilitar tu cuenta?</h3>
+            </div>    
             <div className="banAnAccountButton">
                 <button onClick={noClickHandler} className="">No, gracias</button>
                 <button onClick={siClickHandler} className="">Si, deshabilitar</button>
             </div>
-            <div>
+            <div className="banAnAccountMessage">
                 {banMessage && 
                     <div>
                         <h3>La cuenta <span>{userData.userEmail}</span> ha sido deshabilitada exitosamente.</h3>
-                        <h3>Escribenos a <a href="mailto: mardelcasas@gmail.com">mardelcasas@gmail.com</a></h3>
-                        <h3>Volver a <Link to="/">home</Link></h3>
+                        <h3>Escribenos a <a href="mailto: mardelcasas@gmail.com">mardelcasas@gmail.com</a> para rehabilitarla o puedes volver a <Link to="/">home</Link> y registrarte con otro correo electrónico</h3>
                     </div>}
             </div>
         </div>

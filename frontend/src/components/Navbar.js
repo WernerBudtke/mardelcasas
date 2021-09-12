@@ -1,15 +1,17 @@
 import "../styles/NavBar.css"
 import React from "react"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { connect } from "react-redux"
 import userActions from "../redux/action/userActions"
 import WishList from "./WishList"
+import { BookmarkStar, PersonCheck, PersonCheckFill, PersonPlus, PersonX } from "react-bootstrap-icons"
+
 
 const NavBar = ({token, logOut, photoURL}) => {
   const [navOpen, setNavOpen] = useState(false)
   const [wishlist, setWishList] = useState(false)
-
+  const history = useHistory()
   console.log(token)
   
   const showWishList = () => {
@@ -22,17 +24,17 @@ const NavBar = ({token, logOut, photoURL}) => {
 
   const nav = !token ?
     [
-      { name: "Ingresar", route: "/iniciar-sesion", action: null },
-      { name: "Registrarse", route: "/registrarse", action: null },
+      { logo: <PersonCheck /> ,name: "Ingresar", route: "/iniciar-sesion", action: null },
+      { logo: <PersonPlus />, name: "Registrarse", route: "/registrarse", action: null },
     ] :
     [ 
-      { name:"Cerrar Sesión", route: "#", action: logOut}, 
-      { name:"Favoritos", route:"#", action: showWishList }
+      { logo: <PersonX />, name:"Cerrar Sesión", route: "#", action: logOut}, 
+      { logo: <BookmarkStar />, name:"Favoritos", route:"#", action: showWishList }
     ]
 
   var navMap = nav.map((a, index) => (
-    <Link key={index} to={a.route} onClick={a.action}>
-      {a.name}
+    <Link key={index} to={a.route} onClick={a.action} style={{display:history.location.pathname !== "/chat-soporte" ? "inherit" : "none"}}>
+      {a.logo}{a.name}
     </Link>
   ))
   console.log(photoURL)

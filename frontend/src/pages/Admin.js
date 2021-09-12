@@ -2,6 +2,7 @@ import "../styles/AdminChat2.css"
 import { connect } from "react-redux"
 import { useEffect, useState, useRef } from "react"
 import { io } from "socket.io-client"
+import Header from "../components/Header.js"
 // import "../styles/adminChat.css";
 
 const Admin = (props) =>{
@@ -18,14 +19,14 @@ const Admin = (props) =>{
             socket && socket.disconnect()
             return false
         }else{
-            setSocket(io('https://mardelcasas.herokuapp.com/', {
+            setSocket(io('https://mardelcasas.herokuapp.com', {
                 auth:{
                     token: token
                 }
             }))
         }
         
-     //eslint-disable-next-line
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[token])
     // console.log(messages)
     useEffect(()=>{
@@ -48,6 +49,7 @@ const Admin = (props) =>{
             console.log("se reseteo")
             setErrorBackend(true)
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[socket])
     
     const [newMessage, setNewMessage] = useState({
@@ -138,7 +140,7 @@ const Admin = (props) =>{
         console.log(mistabs)
         setTabs(mistabs)
         setTimeout(() => scrollToBottom(), 1000)
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[messages])
     // pestañanas [{sender: id, messages: ["messages"]}]
     // al apretar ayudar a, pushear a ese arreglo un nuevo [{sender: xxxx, messages: ["blabla"]}]
@@ -152,6 +154,7 @@ const Admin = (props) =>{
     }
     return(
         <div className="supportChatContainer">
+            <Header />
             <div className="chatBoxHandler">
                 <div className="whoImHelpingContainer">
                     <h4>A quien estoy ayudando:</h4>
@@ -161,8 +164,16 @@ const Admin = (props) =>{
                     <p>Id: {users.find(user => user.id === willHelp.whoToHelp).id}</p>
                     </div>}
                 </div>
-                <h4>Chat de Soporte</h4>
-                {tabs.map(tab => <h2 style={willHelp.whoToHelp === tab.sender ? {display:"block"} : {display:"none"}}>{tab.sender}</h2>)}
+                <div className="infoChat">
+                    <div>
+                        {/* <h4>Chat de Soporte</h4> */}
+                        <img  src="/assets/MARDELCASAS-L1.jpg" alt="logo" />
+                    </div>
+                    <div className="helpedUsers">
+                        <h2>Chats habilitado para ID:</h2>
+                        {tabs.map(tab => <h2 style={willHelp.whoToHelp === tab.sender ? {display:"block"} : {display:"none"}}>{tab.sender}</h2>)}
+                    </div>
+                </div>
                 <div className="chatBox" ref={commentsEndRef}>
                     {tabs.map(tab => {
                         return(
@@ -177,27 +188,31 @@ const Admin = (props) =>{
                     <button onClick={sendMessage}>ENVIAR</button>
                 </div>
             </div>
-
-            <div className="sendContainerChat">
-                <div className="handleWhoToHelpContainer">
-                    <label htmlFor="sendTo">Enviar mensaje a ID:</label>
-                    <input onChange={inputHandler} type="text" name="sendTo" value={newMessage.sendTo} disabled></input>
-                    <label htmlFor="whoToHelp">Habilitar chat a: </label>
-                    <input onChange={inputHelpHandler} type="text" name="whoToHelp" value= {willHelp.whoToHelp}></input>
-                    <button onClick={sendIHelp}>Habilitar</button>
+            <div className="helpContainerHandler">
+                <div className="sendContainerChat">
+                    <div className="handleWhoToHelpContainer">
+                        <label htmlFor="sendTo">Enviar mensaje a ID:</label>
+                        <input onChange={inputHandler} type="text" name="sendTo" value={newMessage.sendTo} disabled></input>
+                        <label htmlFor="whoToHelp">Habilitar chat a: </label>
+                        <input onChange={inputHelpHandler} type="text" name="whoToHelp" value= {willHelp.whoToHelp}></input>
+                        <button onClick={sendIHelp}>Habilitar</button>
+                    </div>
+                    <div className="peopleToHelpContainer">
+                        <h4>Clientes que pidieron ayuda:</h4>
+                        {clients.length > 0 && clients.map(client => <p className="clientsSupport" key={client} id={client} onClick={handleClient}>{client}</p>)}
+                    </div>
                 </div>
-                <div className="peopleToHelpContainer">
-                    <h4>Clientes que pidieron ayuda:</h4>
-                    {clients.length > 0 && clients.map(client => <p className="clientsSupport" key={client} id={client} onClick={handleClient}>{client}</p>)}
+                <div className="whoImHelpingContainer">
+                    <h4>Lista de Usuarios conectados:</h4>
+                    <div>
+                        {users.length > 0 && users.map(user =>
+                        <div key={user.id} className="userOnLine">
+                            <p>Nombre: {user.firstName}</p>
+                            <p>Email: {user.eMail}</p>
+                            <p id={user.id} onClick={handleClient}>Id: {user.id}</p>
+                        </div>)}
+                    </div>
                 </div>
-            </div>
-            <div className="whoImHelpingContainer">
-                <h4>Lista de Usuarios conectados:</h4>
-                {users.length > 0 && users.map(user => <div key={user.id}>
-                <p>Nombre: {user.firstName}</p>
-                <p>Email: {user.eMail}</p>
-                <p id={user.id} onClick={handleClient}>Id: {user.id}</p>
-                </div>)}
             </div>
             {errorBackend && 
                 <div className="errorBackend">

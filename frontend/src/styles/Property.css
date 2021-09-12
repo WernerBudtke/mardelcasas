@@ -197,17 +197,17 @@
     width: 60%;
   }
 
-    .propertyMain .carrouselSection .priceP {
-        /* width: 6rem; */
-        left: 81%;
-        top: 5%;
-        font-size: .7rem;
-    }
+  .propertyMain .carrouselSection .priceP {
+    /* width: 6rem; */
+    left: 81%;
+    top: 5%;
+    font-size: .7rem;
+  }
 
-    .propertyMain .dataSection {
-        width: 35%;
-        margin-left: 5%;
-    }
+  .propertyMain .dataSection {
+    width: 35%;
+    margin-left: 5%;
+  }
 
 
   .propertyMain .dataSection .addressDiv {
@@ -229,7 +229,7 @@
 
 @media only screen and (min-width: 1024px) {
   .propertyMain {
-    min-height: 80vh !important;
+    height: 100% !important;
   }
 
   .propertyMain .houseStyleH1 {
@@ -237,19 +237,19 @@
   }
 
   .propertyMain .carrouselSection {
-        width: 60%;
-    }
+    width: 60%;
+  }
 
-    .propertyMain .carrouselSection .priceP {
-        width: 12rem;
-        font-size: 1.6rem;
-        left: 81%;
-        top: 6%;
-    }
+  .propertyMain .carrouselSection .priceP {
+    width: 12rem;
+    font-size: 1.6rem;
+    left: 81%;
+    top: 6%;
+  }
 
-    .propertyMain .dataSection .addressDiv {
-        font-size: 1.4rem;
-    }
+  .propertyMain .dataSection .addressDiv {
+    font-size: 1.4rem;
+  }
 
 
   .propertyMain .dataSection .priceP {
