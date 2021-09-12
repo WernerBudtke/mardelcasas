@@ -27,7 +27,7 @@ const HOST = process.env.MYHOST || '0.0.0.0'
 const serva = app.listen(PORT,HOST, () => console.log(`Server listening on ${PORT} at ${HOST}!`)) // que comienze a escuchar en puerto 4000, una vez escuchado ejecutar función
 const io = socket(serva, {
     cors:{
-      origin:'https://mardelcasas.herokuapp.com/',
+      origin:'https://mardelcasas.herokuapp.com',
       credentials: true
     }
   });
