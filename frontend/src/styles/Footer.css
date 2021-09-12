@@ -40,6 +40,10 @@ footer div div.addresses{
     justify-content: space-between;
 }
 
+footer div div.addresses .contactInfo svg{
+    margin-right: 1rem;
+}
+
 .mob{
     width: 100%;
     flex: 1;
@@ -54,6 +58,15 @@ footer div div.socialNetworks{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+footer div div.socialNetworks a{
+    color: whitesmoke;
+}
+
+footer div div.socialNetworks a svg{
+    width: 1rem;
+    height: 1rem;
 }
 
 @media only screen and (min-width: 425px){
@@ -74,6 +87,10 @@ footer div div.socialNetworks{
     footer div div.socialNetworks{
         flex-direction: row;
         justify-content: space-evenly;
+    }
+    footer svg{
+        width: 1.5rem !important;
+        height: 1.5rem !important;
     }
 }
 

@@ -78,7 +78,7 @@ const HomeFilter = (props) => {
     }
 
     const inputHandler = (e) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         if (e.target.value === "allCases" ) {
             let objectAux = {};
             Object.keys(filter).forEach((key) =>{

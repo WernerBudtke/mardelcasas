@@ -7,7 +7,7 @@ const userActions = {
         let res = await axios.post("https://mardelcasas.herokuapp.com/api/user/register", {
           ...user,
         })
-        console.log(res.data.errors)
+        // console.log(res.data.errors)
         if (res.data.success) {
           return {success: true, response: res.data.response}
         } else {
@@ -183,11 +183,10 @@ const userActions = {
   },
 
   updateWishList: (token, propertyId) => {
-    try {
-      console.log("token en updateWishList", token)
-      return async (dispatch) => {
-        let res = await axios.get(
-          `https://mardelcasas.herokuapp.com/api/user/like/${propertyId}`,
+    return async (dispatch) => {
+      try {
+        // console.log("token en updateWishList", token)
+        let res = await axios.get(`https://mardelcasas.herokuapp.com/api/user/like/${propertyId}`,
           {headers: {
             authorization: 'Bearer ' + token
           }}
@@ -198,9 +197,9 @@ const userActions = {
         } else {
           throw new Error()
         }
-      }
-    } catch {
-      return {success: false, error: "Error de conexión. Intente mas tarde"}
+      } catch {
+        return {success: false, error: "Error de conexión. Intente mas tarde"}
+      } 
     }
   },
 

@@ -5,14 +5,14 @@ import { useHistory, Link } from "react-router-dom"
 import { connect } from "react-redux"
 import userActions from "../redux/action/userActions"
 import WishList from "./WishList"
-import { BookmarkStar, PersonCheck, PersonCheckFill, PersonPlus, PersonX } from "react-bootstrap-icons"
+import { BookmarkStar, PersonCheck, PersonPlus, PersonX } from "react-bootstrap-icons"
 
 
 const NavBar = ({token, logOut, photoURL}) => {
   const [navOpen, setNavOpen] = useState(false)
   const [wishlist, setWishList] = useState(false)
   const history = useHistory()
-  console.log(token)
+  // console.log(token)
   
   const showWishList = () => {
     setWishList(!wishlist)
@@ -37,7 +37,7 @@ const NavBar = ({token, logOut, photoURL}) => {
       {a.logo}{a.name}
     </Link>
   ))
-  console.log(photoURL)
+  // console.log(photoURL)
 
   return (
     <div className="navBar">

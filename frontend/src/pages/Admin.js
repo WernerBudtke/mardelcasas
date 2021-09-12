@@ -13,7 +13,7 @@ const Admin = (props) =>{
     const [clients, setClients] = useState([])
     const [users, setUsers] = useState([])
     const [tabs, setTabs] = useState([])
-    console.log(token)
+    // console.log(token)
     useEffect(()=>{
         if(!token){
             socket && socket.disconnect()
@@ -46,7 +46,7 @@ const Admin = (props) =>{
             setMessages(messages => [...messages, {message: message.message, sender: message.sender}])
         })
         socket.on("resetAll", ()=>{
-            console.log("se reseteo")
+            // console.log("se reseteo")
             setErrorBackend(true)
         })
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -75,7 +75,7 @@ const Admin = (props) =>{
             }
             return tab
         })
-        console.log(mistabs)
+        // console.log(mistabs)
         setTabs(mistabs)
         setNewMessage({
             ...newMessage,
@@ -128,7 +128,7 @@ const Admin = (props) =>{
             return
         }
         let msgs = [...messages]
-        console.log(msgs)
+        // console.log(msgs)
         let newMsg = msgs.pop()
         let mistabs = [...tabs]
         mistabs = mistabs.map(tab => {
@@ -137,7 +137,7 @@ const Admin = (props) =>{
             }
             return tab
         })
-        console.log(mistabs)
+        // console.log(mistabs)
         setTabs(mistabs)
         setTimeout(() => scrollToBottom(), 1000)
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -146,7 +146,7 @@ const Admin = (props) =>{
     // al apretar ayudar a, pushear a ese arreglo un nuevo [{sender: xxxx, messages: ["blabla"]}]
     //al recibir nueva mensaje, chequear sender. hacer find de sender en el arreglo pestañas
     // pushearla a la propiedad messages, el string del message.message
-    console.log(tabs)
+    // console.log(tabs)
     if(!token && !admin){
         return(
             <p>NO ESTAS AUTORIZADO A VER ESTO</p>

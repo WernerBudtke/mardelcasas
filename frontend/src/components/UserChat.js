@@ -17,7 +17,7 @@ const UserChat = (props) =>{
     const [helpRequested, setHelpRequested] = useState(false)
     useEffect(()=>{
         if(!token){
-            console.log("entre al disconnect del userchat")
+            // console.log("entre al disconnect del userchat")
             socket && socket.disconnect()
             return false
         }else{
@@ -46,7 +46,7 @@ const UserChat = (props) =>{
             setGotHelp(true)
         })
         socket.on("newMessage", (message) =>{
-            console.log(message)
+            // console.log(message)
             // console.log("Cuando me llega el mensaje del admin", messages)
             setMessages(messages => [...messages, message])
             // console.log("Despues de pushearlo", messages)
@@ -56,7 +56,7 @@ const UserChat = (props) =>{
 
     if(socket){
         socket.on("resetAll", () =>{
-            console.log("estoy aca")
+            // console.log("estoy aca")
             setMessages([])
             setGotHelp(false)
             setHelpRequested(false)
@@ -79,7 +79,7 @@ const UserChat = (props) =>{
     }
     
     const requestHelp = () => {
-        console.log("Pedí ayuda")
+        // console.log("Pedí ayuda")
         socket.emit('clientNeedHelp')
         setHelpRequested(true)
     }
@@ -129,7 +129,7 @@ const UserChat = (props) =>{
                 className="openSupportDiv"
                 onClick={chatHandler}
             > 
-                {(!chatSwap && <ArrowBarUp /> || <ArrowBarDown />)} Número de operadores en línea: {adminsOnline} {chatSwap && <XCircle id="closeIcon" />}
+                {((!chatSwap && <ArrowBarUp />) || <ArrowBarDown />)} Número de operadores en línea: {adminsOnline} {chatSwap && <XCircle id="closeIcon" />}
             </div>                        
             {chatSwap && <div id="chatBoxContainer">
                 {/* <button id="closeSupportBtn" onClick={chatHandler}>❌</button> */}

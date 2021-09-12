@@ -2,13 +2,13 @@ import axios from "axios"
 
 const propertiesActions = {
   getPropertiesFiltered: (filter) => {
-    console.log("filter que se aplica al endpoint en redux", filter)
+    // console.log("filter que se aplica al endpoint en redux", filter)
     return async (dispatch) => {
       try {
         let res = await axios.put("https://mardelcasas.herokuapp.com/api/properties", {filter: filter})
         if (res.data.response) {
-          console.log("array de propiedades en action getProperties")
-          console.log(res.data.response)
+          // console.log("array de propiedades en action getProperties")
+          // console.log(res.data.response)
           dispatch({ type: "GET_PROPERTIES_FILTERED", payload:{ filterObj: filter, response: res.data.response }})
           return {success: true, response: res.data.response}
         } else {
@@ -61,7 +61,7 @@ const propertiesActions = {
   postNewProperty: (newProperty, token) =>{
     return async () => {
       try{
-        let res = await axios.post("https://mardelcasas.herokuapp.com/property", {...newProperty},{
+        let res = await axios.post("https://mardelcasas.herokuapp.com/api/property", {...newProperty},{
           headers:{
             Authorization: 'Bearer ' + token
           }

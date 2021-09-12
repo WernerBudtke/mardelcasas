@@ -12,7 +12,7 @@ import Swal from "sweetalert2"
 import Preloader from "../components/Preloader"
 
 const PropertiesList = (props) => {
-    const {filterObj, getCities, getPropertiesFiltered, cities, properties, token} = props
+    const {filterObj, getCities, cities, properties, token} = props
     const [sortedProperties, setSortedProperties] = useState(properties)
     const [renderSort, setRenderSort] = useState(false)
     const [subscription, setSubscription] = useState("")
@@ -71,9 +71,9 @@ const PropertiesList = (props) => {
                 setSortedProperties(properties)
                 return   
         }
-        console.log(e.target.value)
-        console.log("ordenar")
-        console.log(sortedProperties) //ESTE ARRAY SE TIENE QUE ENVIAR EN 
+        // console.log(e.target.value)
+        // console.log("ordenar")
+        // console.log(sortedProperties) //ESTE ARRAY SE TIENE QUE ENVIAR EN 
         setRenderSort(!renderSort)
     }
 
@@ -127,8 +127,8 @@ const PropertiesList = (props) => {
         )
     }
 
-    console.log(filterObj)
-    console.log("Array de propiedades", properties)
+    // console.log(filterObj)
+    // console.log("Array de propiedades", properties)
     return (
         <div className="containerPropertiesList">
             <Header />

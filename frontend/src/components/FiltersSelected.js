@@ -7,11 +7,11 @@ import Swal from "sweetalert2"
 const FiltersSelected = (props) => {
     const {deletePropertieFromObject, formFilter, setFormFilter, cities, getPropertiesFiltered, selectFilters} = props
     const [filtersSelected, setFiltersSelected] = useState([])
-    console.log("Estoy en FiltersSelected")
+    // console.log("Estoy en FiltersSelected")
     useEffect(() => {
-        console.log("FiltersSelected")
-        console.log("Array de Formfilter en UseEffect", formFilter)
-        console.log("filtros listos para eliminar", filtersSelected)
+        // console.log("FiltersSelected")
+        // console.log("Array de Formfilter en UseEffect", formFilter)
+        // console.log("filtros listos para eliminar", filtersSelected)
         let arrayAux = [] 
         Object.keys(formFilter).forEach((key, i) =>{
             
@@ -105,7 +105,7 @@ const FiltersSelected = (props) => {
                     default:
                         break;
                 }                        
-                console.log("Cada bloque a eliminar ", [nameDelete, valueDelete, key, formFilter[key]])
+                // console.log("Cada bloque a eliminar ", [nameDelete, valueDelete, key, formFilter[key]])
                 arrayAux.push([nameDelete, valueDelete, key, formFilter[key]])
             } //else {
             //     setFiltersSelected([])
@@ -134,9 +134,9 @@ const FiltersSelected = (props) => {
       }
     
     const resetInputSelect = (e, nameInputSelect, i) => {
-        console.log(nameInputSelect)
+        // console.log(nameInputSelect)
         let initialValue
-        console.log("para colocar efecto", e.target)
+        // console.log("para colocar efecto", e.target)
         switch (nameInputSelect) {
             case "operation":
             case "city":
@@ -161,11 +161,11 @@ const FiltersSelected = (props) => {
             default:
                 break;
         }
-        console.log("Array de bloques antes de eliminar uno", filtersSelected)
+        // console.log("Array de bloques antes de eliminar uno", filtersSelected)
         setFiltersSelected( filtersSelected.filter((block, j) => i!==j))
         setFormFilter( { ...formFilter, [nameInputSelect]: initialValue})
         let newFilter = deletePropertieFromObject(nameInputSelect) 
-        console.log("nuevo filtro despues de eliminar bloque", newFilter)
+        // console.log("nuevo filtro despues de eliminar bloque", newFilter)
         getPropertiesFiltered(newFilter)
         .then(res => {
             if(!res.success){

@@ -13,7 +13,6 @@ const propertiesReducer = (state = initState, action) => {
             
         case "SET_FILTER":
             return{
-                ...state,
                 filterObj: action.payload,
             }
 

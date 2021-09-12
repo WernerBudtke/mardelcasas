@@ -1,5 +1,8 @@
 import "../styles/Footer.css"
 import React from 'react'
+import { IoIosPin } from "react-icons/io"
+import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa"
+import { EnvelopeFill, Telephone } from "react-bootstrap-icons"
 
 const Footer = () => {
     return (
@@ -7,29 +10,29 @@ const Footer = () => {
         <div className="contact">
             <div className="addresses">
                 <div className="contactInfo infoOne">
-                    <img className="contactImg" src="/assets/rrss_icons/pin.png" alt="pin"/>
+                    <IoIosPin />
                     <p>Jujuy 995, Mar del Plata, <br id="footerBr"/>Buenos Aires</p>
                 </div>
                 <div className="mob">
                 <div  className="contactInfo infoTwo">
-                    <img className="contactImg" src="/assets/rrss_icons/telephone.png" alt="telephone"/>
+                    <Telephone />
                     <p>+54 2235391098</p>
                 </div>
                 <div  className="contactInfo infoThree">
-                    <img className="mailImg" src="/assets/rrss_icons/mail.png" alt="email"/>
+                    <EnvelopeFill />
                     <p>info@mardelcasas.com</p>
                 </div>
                 </div>
             </div>
             <div className="socialNetworks">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img className="rrssImg" src="/assets/rrss_icons/facebook.png" alt="facebook"/>
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer" >
+                    <FaFacebookSquare />
                 </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img className="rrssImg" src="/assets/rrss_icons/instagram.png" alt="instagram"/>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+                    <FaInstagramSquare />
                 </a>
-                <a href="https://www.twitter.com" target="_blank">
-                    <img className="rrssImg" src="/assets/rrss_icons/twitter.png" alt="twitter"/>
+                <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+                    <FaTwitterSquare />
                 </a>
             </div>
         </div>

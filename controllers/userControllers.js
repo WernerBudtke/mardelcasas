@@ -106,7 +106,7 @@ const userControllers = {
         })
     },
     validateUser: (req, res)=>{
-        console.log(req.params.id)
+        // console.log(req.params.id)
         console.log("Received Validate User Email Petition:" + Date())
         User.findOneAndUpdate({_id: req.params.id}, {validated: true})
         .then(user => user ? res.json({success: true}) : res.json({success: false, response: "Didn't find that user"}))

@@ -9,7 +9,7 @@ import 'swiper/components/pagination/pagination.min.css'
 SwiperCore.use([Navigation, Pagination, Autoplay ])
 
 const CarouselImg = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div className="swiperBox">
             <Swiper

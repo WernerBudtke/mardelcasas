@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Swal from "sweetalert2";
 
 const AdminForm = (props) => {
-    console.log(props)
+    // console.log(props)
   let initState = {
     agents: ["61376cc8c4636a73e669b809"], // hardcodeado 1
     city: "61339e91002bc214e66e9770", // me la traigo por props.. dar opciones

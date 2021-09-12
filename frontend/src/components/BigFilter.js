@@ -10,11 +10,10 @@ import Swal from "sweetalert2"
 // import "animate.css"
 
 const BigFilter = (props) => {
-    const {filterObj, setFilter, getCities, cities, properties} = props
-    console.log("Estoy en Big Filter")
-    console.log("Filter que llega del store", filterObj)
+    const {filterObj, getCities, cities} = props
+    // console.log("Estoy en Big Filter")
+    // console.log("Filter que llega del store", filterObj)
     const [bigFilter, setBigFilter] = useState(filterObj)
-    const [render, setRender] = useState(false)
     const [formFilter, setFormFilter] = useState({
         operation: "allCases",  city:"allCases", isHouse: "allCases", 
         numberOfRooms:"allCases", numberOfBedrooms: "allCases", numberOfBathrooms: "allCases",
@@ -44,7 +43,7 @@ const BigFilter = (props) => {
         let isHouse = "allCases"
         let roofed = "allCases"
         setBigFilter(filterObj)
-        console.log(numOfBed)
+        // console.log(numOfBed)
         if(Object.keys(filterObj).length > 0){
             if(filterObj.forSale){
                 newOperation = "forSale"
@@ -58,19 +57,19 @@ const BigFilter = (props) => {
               }
             }
             if(filterObj.numberOfBathrooms){
-                console.log(filterObj.numberOfBathrooms)
+                // console.log(filterObj.numberOfBathrooms)
                 numOfBath = typeof filterObj.numberOfBathrooms  === "object" ? "6AndMore" : filterObj.numberOfBathrooms
-                console.log(numOfBath)
+                // console.log(numOfBath)
             }
             if(filterObj.numberOfBedrooms){
-                console.log(filterObj.numberOfBedrooms)
+                // console.log(filterObj.numberOfBedrooms)
                 numOfBed = typeof filterObj.numberOfBedrooms  === "object" ? "6AndMore" : filterObj.numberOfBedrooms
-                console.log(numOfBed)
+                // console.log(numOfBed)
             }
             if(filterObj.numberOfRooms){
-              console.log(filterObj.numberOfRooms)
+            //   console.log(filterObj.numberOfRooms)
               numOfRoom = typeof filterObj.numberOfRooms  === "object" ? "6AndMore" : filterObj.numberOfRooms
-              console.log(numOfBed)
+            //   console.log(numOfBed)
             }
     
             if(typeof filterObj.isHouse !== "undefined"){
@@ -196,6 +195,12 @@ const BigFilter = (props) => {
                     <button onClick={searchProperties}>
                         Buscar <Search />
                     </button>}
+                    <FiltersSelected 
+                        deletePropertieFromObject={deletePropertieFromObject}
+                        formFilter={formFilter}
+                        setFormFilter={setFormFilter}
+                        selectFilters={selectFilters}
+                    />
                 </div>
                 {selectFilters &&   
                 <div className="filtersToSelect">

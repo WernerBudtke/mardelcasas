@@ -39,9 +39,9 @@ let adminsConnected = []
 let didReset = false
 io.on("connection", (socket) => {
     if(!didReset){
-        console.log("mande a resetear")
+        // console.log("mande a resetear")
         setTimeout(() => {
-            console.log("resetió")
+            // console.log("resetió")
             io.sockets.emit("resetAll")
         }, 4000)
         didReset = true
@@ -55,7 +55,7 @@ io.on("connection", (socket) => {
         error = err
     }
     if(error){
-        console.log("Disconnected Socket BECAUSE ERROR")
+        // console.log("Disconnected Socket BECAUSE ERROR")
         socket.disconnect()
     }
     if(verifiedUser._doc.admin){
@@ -74,11 +74,13 @@ io.on("connection", (socket) => {
         })
         adminsConnected = adminsConnected.filter(admin => newAdmin.eMail !== admin.eMail)
         adminsConnected.push(newAdmin)
-        console.log("admin connected", newAdmin.eMail)
+        // console.log("admin connected", newAdmin.eMail)
         usersConnected.forEach(user => socket.broadcast.to(user.id).emit('adminConnected', adminsConnected.length))
         socket.emit("userConnected", usersConnected)
     }else{
         // console.log(socket.id)
+        // console.log(verifiedUser._doc.admin)
+        
         let newUser = {eMail: verifiedUser._doc.eMail, id: socket.id, firstName: verifiedUser._doc.firstName}
         // console.log(newUser.eMail)
         usersConnected.forEach(user => {
@@ -90,7 +92,7 @@ io.on("connection", (socket) => {
                     // console.log(socket.id)
                     // If given socket id is exist in list of all sockets, kill it
                     if(socket.id === user.id){
-                        console.log("mande reset y disconnect")
+                        // console.log("mande reset y disconnect")
                         socket.emit("resetAll")
                         socket.disconnect();
                     } 
@@ -99,7 +101,7 @@ io.on("connection", (socket) => {
         })
         usersConnected = usersConnected.filter(admin => newUser.eMail !== admin.eMail)
         usersConnected.push(newUser)
-        console.log("User connected", newUser.eMail)
+        // console.log("User connected", newUser.eMail)
         adminsConnected.forEach(user => socket.broadcast.to(user.id).emit('userConnected', usersConnected))
         socket.emit("adminConnected", adminsConnected.length)
     }
@@ -109,8 +111,8 @@ io.on("connection", (socket) => {
         socket.broadcast.to(msgInfo.sendTo).emit("newMessage", {message: msgInfo.message, sender: socket.id})
     })
     socket.on("clientNeedHelp", () =>{
-        console.log(socket.id)
-        console.log("pedido de ayuda")
+        // console.log(socket.id)
+        // console.log("pedido de ayuda")
        adminsConnected.forEach(admin => socket.broadcast.to(admin.id).emit("clientNeedHelp", {sender: socket.id}))
     })
     socket.on("iWillHelp", (whoToHelp) =>{
@@ -120,17 +122,17 @@ io.on("connection", (socket) => {
         }
     })
     socket.on("disconnect", () =>{
-        console.log(`${socket.id} disconnected`)
+        // console.log(`${socket.id} disconnected`)
         if(verifiedUser._doc.admin){
             // console.log(socket.id)
             // console.log(verifiedUser._doc.admin)
-            console.log("Admin disconnected")
+            // console.log("Admin disconnected")
             adminsConnected = adminsConnected.filter(admin => admin.id !== socket.id)
             usersConnected.forEach(user => socket.broadcast.to(user.id).emit('adminConnected', adminsConnected.length))
         }else{
             // console.log(socket.id)
             // console.log(verifiedUser._doc.admin)
-            console.log("User disconnected")
+            // console.log("User disconnected")
             usersConnected = usersConnected.filter(user => user.id !== socket.id)
             adminsConnected.forEach(user => socket.broadcast.to(user.id).emit('userConnected', usersConnected))
         }

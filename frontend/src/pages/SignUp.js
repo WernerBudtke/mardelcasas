@@ -56,7 +56,7 @@ const SignUp = (props) => {
     } else {
       try {
         let res = await props.registerUser(user)
-        console.log(res)
+        // console.log(res)
         if (!res.success) {
           typeof res.errors !== "string" ?
           setErrors(res.errors) :
@@ -90,7 +90,7 @@ const SignUp = (props) => {
   const sendValidationEmail = async () => {
     try {
       let res = await props.validationUserEmail(user.eMail)
-      console.log(res)
+      // console.log(res)
       if (res.success) {
         renderToast("Te enviamos un mail para que valides tu cuenta", "success")
       } else {

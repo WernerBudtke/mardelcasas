@@ -9,26 +9,26 @@ const BanAnAccount = (props) => {
     const [banMessage, setBanMessage] = useState(false)
     const [userData, setUserData] = useState()
 
-    console.log(props)
+    // console.log(props)
 
     const noClickHandler = () => {
-        console.log("no gracias")
+        // console.log("no gracias")
         props.history.push("/")
     }
 
     const siClickHandler = async () => {
-        console.log("si, deshabilitar")
+        // console.log("si, deshabilitar")
         try {
             let res = await props.disableUser(props.match.params.id)
             if (!res.success) {
                 throw res.response
             } else {
-                console.log(res.response)
+                // console.log(res.response)
                 setUserData(res.response)
                 setBanMessage(!banMessage)
             }
          } catch (err) {
-             console.log(err)
+            console.log(err)
          }
     }
 
