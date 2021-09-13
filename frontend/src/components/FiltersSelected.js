@@ -60,32 +60,32 @@ const FiltersSelected = (props) => {
                         nameDelete = "Menor a: $"
                         valueDelete = formFilter.lower
                         break;
-                    case "roofedArea":
-                        nameDelete = "Area Cubierta: "
-                        let valueRoofed = formFilter.roofedArea
-                        if(typeof formFilter.roofedArea === "object"){
-                            valueRoofed = JSON.stringify(formFilter.roofedArea)
-                        }
-                        switch (valueRoofed) {
-                            case '{"$lte": 40}':
-                                valueDelete = "hasta 40m²"
-                                break;
-                            case '{"$gte":41,"$lte": 80}':
-                                valueDelete = "41m² a 80m²"
-                                break;
-                            case '{"$gte":81,"$lte": 200}':
-                                valueDelete = "81m² a 200m²"
-                                break;
-                            case '{"$gte":201,"$lte": 600}':
-                                valueDelete = "201m² a 600m²"
-                                break;
-                            case '{"$gte":600}':
-                                valueDelete = "600m² o más"
-                                break;
-                            default:
-                                break;
-                        }
-                        break;
+                    // case "roofedArea":
+                    //     nameDelete = "Area Cubierta: "
+                    //     let valueRoofed = formFilter.roofedArea
+                    //     if(typeof formFilter.roofedArea === "object"){
+                    //         valueRoofed = JSON.stringify(formFilter.roofedArea)
+                    //     }
+                    //     switch (valueRoofed) {
+                    //         case '{"$lte": 40}':
+                    //             valueDelete = "hasta 40m²"
+                    //             break;
+                    //         case '{"$gte":41,"$lte": 80}':
+                    //             valueDelete = "41m² a 80m²"
+                    //             break;
+                    //         case '{"$gte":81,"$lte": 200}':
+                    //             valueDelete = "81m² a 200m²"
+                    //             break;
+                    //         case '{"$gte":201,"$lte": 600}':
+                    //             valueDelete = "201m² a 600m²"
+                    //             break;
+                    //         case '{"$gte":600}':
+                    //             valueDelete = "600m² o más"
+                    //             break;
+                    //         default:
+                    //             break;
+                    //     }
+                    //     break;
                     case "isBrandNew":
                         nameDelete = "A estrenar"
                         valueDelete = ""
@@ -145,7 +145,7 @@ const FiltersSelected = (props) => {
             case "numberOfBedrooms":
             case "numberOfBathrooms":
             case "isUSD":
-            case "roofedArea":
+            // case "roofedArea":
                 initialValue = "allCases"
                 break;
             case "greater":

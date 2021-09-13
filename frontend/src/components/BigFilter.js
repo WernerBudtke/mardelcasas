@@ -41,7 +41,6 @@ const BigFilter = (props) => {
         let numOfBed = "allCases"
         let numOfRoom = "allCases"
         let isHouse = "allCases"
-        let roofed = "allCases"
         setBigFilter(filterObj)
         // console.log(numOfBed)
         if(Object.keys(filterObj).length > 0){
@@ -76,7 +75,7 @@ const BigFilter = (props) => {
                 isHouse = filterObj.isHouse ? 'house' : 'apartment'
             }        
         }
-        setFormFilter({...formFilter,...filterObj, operation: newOperation, numberOfRooms: numOfRoom, numberOfBedrooms: numOfBed, numberOfBathrooms: numOfBath, isHouse: isHouse, roofedArea: roofed})
+        setFormFilter({...formFilter,...filterObj, operation: newOperation, numberOfRooms: numOfRoom, numberOfBedrooms: numOfBed, numberOfBathrooms: numOfBath, isHouse: isHouse})
     // eslint-disable-next-line
     },[filterObj])
 
