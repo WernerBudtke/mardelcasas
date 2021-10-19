@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Gallery for a real state company!
+> Web for a real state company! Showcasing houses
 
 ### ✨ [Demo](https://mardelcasas.herokuapp.com/)
 
