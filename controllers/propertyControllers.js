@@ -6,15 +6,13 @@ const handleError = (res,err) =>{
     res.json({success: false, response: err.message})
 }
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-    type: 'OAuth2',
-    user: process.env.MAIL_USERNAME,
-    pass: process.env.MAIL_PASSWORD,
-    clientId: process.env.OAUTH_CLIENTID,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
-    refreshToken: process.env.OAUTH_REFRESH_TOKEN
-    }
+    port: 465,
+    host:'smtp.gmail.com',
+    auth:{
+        user: process.env.MAILUSERNAME,
+        pass: process.env.MAILPASSWORD
+    },
+    tls: {rejectUnauthorized: false}
 })
 const propertyControllers = {
     getProperties: (req, res) => {
