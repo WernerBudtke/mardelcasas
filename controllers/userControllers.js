@@ -196,6 +196,7 @@ const userControllers = {
                     }],
                 }
                 transporter.sendMail(mailOptions, (err, data) => {
+                    err && console.log(err)
                     err ? res.json({success: false, response: err}) : res.json({success: true, response: data})
                 })
             }else{
