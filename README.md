@@ -35,7 +35,7 @@ Joi
 👤 **Federico Budtke**
 
 * Github: [@WernerBudtke](https://github.com/WernerBudtke)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/federico-werner-budtke-644362217\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/federico-werner-budtke-644362217\/)
+* LinkedIn: [@https://www.linkedin.com/in/fwbudtke/](https://www.linkedin.com/in/fwbudtke/)
 
 👤 **Enrique Durand de Cassis**
 * Github: [@ddc-enrique](https://github.com/ddc-enrique)
