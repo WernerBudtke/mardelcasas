@@ -3,3 +3,5 @@ WORKFLOW_GIT_PROPUESTO.docx
 /node_modules
 /frontend/node_modules
 .env
+README.md
+LICENSE.md

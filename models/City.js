@@ -4,5 +4,4 @@ const citySchema = new mongoose.Schema({
     photoURL:{type: String, required: true}
 })
 const City = mongoose.model('city', citySchema)
-
 module.exports = City
