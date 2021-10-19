@@ -29,6 +29,7 @@ Node.js
 Redux
 JWT / Passport
 Joi
+WEB Socket
 ```
 ## Authors:
 
